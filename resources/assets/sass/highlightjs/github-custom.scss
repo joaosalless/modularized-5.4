@@ -1,0 +1,139 @@
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block !important;
+  overflow-x: auto !important;
+  //padding: 0.5em !important;
+  color: #333 !important;
+  background: #fff !important;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998 !important;
+  font-style: italic !important;
+}
+
+.hljs-function {
+  //color: red !important;
+}
+
+.hljs-keyword {
+  color: #a71d5d !important;
+  font-weight: normal !important;
+}
+
+.hljs-selector-tag
+//.hljs-subst
+{
+  color: green !important;
+  font-weight: normal !important;
+}
+
+.hljs-number {
+  color: #008080 !important;
+  font-weight: normal !important;
+}
+
+.hljs-literal {
+  color: #008080 !important;
+  font-weight: normal !important;
+}
+
+.hljs-variable {
+  color: #008080 !important;
+  font-weight: normal !important;
+}
+
+.hljs-template-variable {
+  color: #008080 !important;
+  font-weight: normal !important;
+}
+
+.hljs-tag .hljs-attr {
+  color: #008080 !important;
+  font-weight: normal !important;
+}
+
+.hljs-string {
+  color: #183691 !important;
+  font-weight: normal !important;
+}
+
+.hljs-doctag {
+  color: #d14 !important;
+}
+
+.hljs-title {
+  color: #0086b3 !important;
+  font-weight: normal !important;
+}
+
+.hljs-section {
+  color: #795da3 !important;
+  font-weight: normal !important;
+}
+
+.hljs-selector-id {
+  color: #795da3 !important;
+  font-weight: normal !important;
+}
+
+.hljs-subst {
+  font-weight: normal !important;
+}
+
+.hljs-type,
+.hljs-class {
+  color: #795da3 !important;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080 !important;
+  font-weight: normal !important;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926 !important;
+}
+
+.hljs-symbol {
+  color: #990073 !important;
+}
+
+.hljs-bullet {
+  color: #990073 !important;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3 !important;
+}
+
+.hljs-meta {
+  color: #999 !important;
+  font-weight: normal !important;
+}
+
+.hljs-deletion {
+  background: #fdd !important;
+}
+
+.hljs-addition {
+  background: #dfd !important;
+}
+
+.hljs-emphasis {
+  font-style: italic !important;
+}
+
+.hljs-strong {
+  font-weight: bold !important;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "laravel",
+  "description": "",
+  "main": "",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "boostrap#^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0",
+    "awesome-bootstrap-checkbox": "^0.3.7",
+    "bootstrap-datepicker": "^1.6.4",
+    "bootstrap-filestyle": "^1.2.1",
+    "jquery-mask-plugin": "^1.14.9",
+    "tinymce": "^4.5.4",
+    "clipboard": "^1.6.1"
+  }
+}

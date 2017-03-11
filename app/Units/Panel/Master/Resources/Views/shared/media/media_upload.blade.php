@@ -1,0 +1,1 @@
+{{ Form::bsFile('medias[]', preg_match("/create$/", request()->route()->getName()) ? 'Anexar mídias' : 'Anexar novas mídias', ['multiple' => true]) }}

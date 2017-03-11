@@ -1,0 +1,1 @@
+{{ Form::label($name, $label, array_merge(['class' => 'control-label'], $attributes))}}

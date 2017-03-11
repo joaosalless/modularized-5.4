@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "devDependencies": {
+    "axios": "^0.15.2",
+    "bootstrap-sass": "^3.3.7",
+    "highlight.js": "^9.9.0",
+    "jquery": "^3.1.0",
+    "laravel-mix": "^0.5.0",
+    "lodash": "^4.16.2",
+    "vue": "^2.2.1"
+  },
+  "dependencies": {
+    "admin-lte": "^2.3.11",
+    "autosize": "^3.0.20",
+    "bootstrap": "^3.3.7",
+    "bootstrap-datepicker": "^1.6.4",
+    "bootstrap-filestyle": "^1.2.1",
+    "bootstrap-toggle": "^2.2.2",
+    "clipboard": "^1.6.1",
+    "font-awesome-sass": "^4.7.0",
+    "fontawesome": "^4.7.2",
+    "highlightjs": "^9.8.0",
+    "jquery-mask-plugin": "^1.14.10",
+    "roboto-fontface": "^0.7.0",
+    "select2": "^4.0.3",
+    "simple-line-icons": "^2.4.1",
+    "sortablejs": "^1.5.1",
+    "tether": "^1.4.0",
+    "tinymce": "^4.5.4",
+    "vue-template-compiler": "^2.2.1"
+  }
+}

@@ -1,0 +1,28 @@
+<div class="col-md-12">
+
+    @include("{$panel->unitAlias()}::shared.index_table.header")
+
+    <div class="table-responsive">
+        <table class="{{ $panel->unitConfig()['theme']['table']['class'] }}">
+            <thead>
+                <tr>
+                    <th>{{ trans('medias::category.title') }}</th>
+                    <th>{{ trans('medias::category.slug') }}</th>
+                    @include("{$panel->unitAlias()}::shared.list.model_medias_th")
+                    @include("{$panel->unitAlias()}::shared.list.model_actions_th")
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($collection as $category)
+                    <tr>
+                        <td>{{ $category->getTitle() }}</td>
+                        <td>{{ $category->slug }}</td>
+                        @include("{$panel->unitAlias()}::shared.list.model_medias_td", ['model' => $category])
+                        @include("{$panel->unitAlias()}::shared.list.model_actions_td", ['model'  => $category])
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
+</div>
