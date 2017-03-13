@@ -16446,7 +16446,7 @@ namespace SimpleSoftwareIO\QrCode\Facades {
          * @return $this 
          * @static 
          */
-        public static function merge($filepath, $percentage = '0.2', $absolute = false)
+        public static function merge($filepath, $percentage = '0,2', $absolute = false)
         {
             return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::merge($filepath, $percentage, $absolute);
         }
@@ -16459,7 +16459,7 @@ namespace SimpleSoftwareIO\QrCode\Facades {
          * @return $this 
          * @static 
          */
-        public static function mergeString($content, $percentage = '0.2')
+        public static function mergeString($content, $percentage = '0,2')
         {
             return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::mergeString($content, $percentage);
         }

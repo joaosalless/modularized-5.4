@@ -3520,16 +3520,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.22.0",
+            "version": "1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "bad29cb8d18ab0315e6c477751418a82c850d558"
+                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bad29cb8d18ab0315e6c477751418a82c850d558",
-                "reference": "bad29cb8d18ab0315e6c477751418a82c850d558",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1e044bc4b34e91743943479f1be7a1d5eb93add0",
+                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0",
                 "shasum": ""
             },
             "require": {
@@ -3594,7 +3594,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-11-26T00:15:39+00:00"
+            "time": "2017-03-13T07:08:03+00:00"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -5007,16 +5007,16 @@
         },
         {
             "name": "spatie/html-element",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/html-element.git",
-                "reference": "d7da01b4bd6ac122901bec6a1b042ecf240bb2c7"
+                "reference": "876b73a9d6d77dae7a157288a2a911bf1dbba1b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/html-element/zipball/d7da01b4bd6ac122901bec6a1b042ecf240bb2c7",
-                "reference": "d7da01b4bd6ac122901bec6a1b042ecf240bb2c7",
+                "url": "https://api.github.com/repos/spatie/html-element/zipball/876b73a9d6d77dae7a157288a2a911bf1dbba1b9",
+                "reference": "876b73a9d6d77dae7a157288a2a911bf1dbba1b9",
                 "shasum": ""
             },
             "require": {
@@ -5049,7 +5049,7 @@
                 "html-element",
                 "spatie"
             ],
-            "time": "2016-03-11T13:14:56+00:00"
+            "time": "2017-03-13T11:16:53+00:00"
         },
         {
             "name": "spatie/image",
