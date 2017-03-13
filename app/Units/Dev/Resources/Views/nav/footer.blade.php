@@ -7,18 +7,20 @@
                         <ul class="list-unstyled">
                             <li class="title">Institucional</li>
                             <li><a href="{{ url('/') }}">Home</a></li>
-                            <li><a href="{{ url('contato') }}">Fale conosco</a></li>
+                            <li><a href="{{ url('/quem-somos') }}">Quem somos</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3">
                         <ul class="list-unstyled">
                             <li class="title">Área Restrita</li>
                             @foreach(config('auth.providers') as $provider => $value)
-                                <li>
-                                    <a href="{{ route("{$provider}.dashboard.index") }}">
-                                        {{ trans("{$provider}::panel.name") }}
-                                    </a>
-                                </li>
+                                @if(Route::has("{$provider}.dashboard.index"))
+                                    <li>
+                                        <a href="{{ route("{$provider}.dashboard.index") }}">
+                                            {{ trans("{$provider}::panel.name") }}
+                                        </a>
+                                    </li>
+                                @endif
                             @endforeach
                         </ul>
                     </div>
@@ -46,15 +48,16 @@
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <span class="text-muted">© {{ date('Y') }} {{ config('app.name') }}. Todos os direitos reservados.</span>
+                        <span class="text-muted">© {{ date('Y') }} {{ config('app.name') }}</span>
                     </div>
                     <div class="col-md-12 text-center">
                         <span class="text-muted">
-                            Desenvolvido por <a href="http://i11.com.br" target="_blank" class="text-developer">I 11 TECNOLOGIAS</a>
+                            Desenvolvido por <a href="https://github.com/joaosalless" target="_blank" class="text-developer">joaosalless</a>
                         </span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </footer>

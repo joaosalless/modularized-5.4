@@ -48,7 +48,7 @@
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <span class="text-muted">© {{ date('Y') }} {{ config('app.name') }}. Todos os direitos reservados.</span>
+                        <span class="text-muted">© {{ date('Y') }} {{ config('app.name') }}</span>
                     </div>
                     <div class="col-md-12 text-center">
                         <span class="text-muted">
