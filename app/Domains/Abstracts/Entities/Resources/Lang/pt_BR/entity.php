@@ -96,4 +96,5 @@ return [
     'nome_municipio'                => 'Nome do Município',
     'sexo'                          => 'Sexo',
     'profile_updated'               => 'Perfil atualizado',
+    'pages'                         => 'Páginas',
 ];
