@@ -30,8 +30,6 @@ class User extends AbstractUser
 
     protected $entityAllowedMedias   = [
         'images',
-        'videos',
-        'audios',
         'documents',
     ];
 
@@ -55,7 +53,7 @@ class User extends AbstractUser
         'profile_id',
         'profile_type',
         'role',
-        'status',
+        'terms',
         'email_verified',
         'email_verified_at',
         'banned',
@@ -65,37 +63,9 @@ class User extends AbstractUser
         'active',
     ];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
     protected $with = ['profile'];
 
     protected $appends = ['name'];
-
-    public function getNameAttribute()
-    {
-        if ($this->profile) {
-            return $this->isPerson() ? $this->profile->nome : $this->profile->nome_fantasia;
-        }
-        return null;
-    }
-
-    public function profile() : morphTo
-    {
-        return $this->morphTo();
-    }
-
-    public function isCompany() : bool
-    {
-        return $this->profile_type ? $this->profile_type == Company::class : null;
-    }
-
-    public function isPerson() : bool
-    {
-        return $this->profile_type ? $this->profile_type == Person::class : null;
-    }
 
     public function sendPasswordResetNotification($token)
     {

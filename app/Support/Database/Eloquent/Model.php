@@ -32,11 +32,7 @@ abstract class Model extends EloquentModel implements ModelContract,
     protected $presenter = ViewPresenter::class;
     protected $columnTitle;
     protected $entityGender;
-    protected $entityName;
-    protected $entityNamePlural;
     protected $entityRouteAlias;
     protected $entityRoutePrefix;
-    protected $entityShortName;
-    protected $entityShortNamePlural;
     protected $mediaCategorySlug;
 }

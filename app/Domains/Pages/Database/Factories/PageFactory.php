@@ -6,6 +6,10 @@ use App\Domains\Pages\Page;
 use App\Support\Database\Factory\ModelFactory;
 use Illuminate\Support\Str;
 
+/**
+ * Class PageFactory
+ * @package  App\Domains\Pages
+ */
 class PageFactory extends ModelFactory
 {
     protected $model = Page::class;

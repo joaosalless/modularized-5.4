@@ -16,10 +16,13 @@ class {{ $entity['reflectionClass']->getShortName() }}Factory extends ModelFacto
 
     protected function fields()
     {
-        return [
-
-        ];
-    }
+    @if($entity['factoryFields'])
+    return [
+    @foreach($entity['factoryFields'] as $key => $col)
+        '{{ $key }}' => null,
+    @endforeach
+    ];
+    @endif}
 }
 </code>{{ Html::bsClipboard('factory_tpl') }}
 </pre>

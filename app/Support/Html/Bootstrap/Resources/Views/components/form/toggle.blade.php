@@ -1,15 +1,17 @@
 <div class="form-group{{ $errors->has(str_array_dot($name)) ? ' has-error' : '' }}">
     {{ Form::bsLabel($name, $label)}}
     <div>
-        {{ Form::hidden($name, 0) }}
-        {{ Form::checkbox($name, $value, $checked, array_merge([
-        'id'           => $name,
-        'class'        => 'checkbox bs-toggle',
-        'autocomplete' => 'off',
-        'data-toggle'  => 'toggle',
-        'data-size'    => 'small',
-        'data-on'      => 'On',
-        'data-off'     => 'Off',
+        {{ Form::hidden($name, $value['off']) }}
+        {{ Form::checkbox($name, $value['on'], $checked, array_merge([
+        'id'            => $name,
+        'class'         => 'checkbox bs-toggle',
+        'autocomplete'  => 'off',
+        'data-toggle'   => 'toggle',
+        'data-size'     => 'small',
+        'data-on'       => 'On',
+        'data-off'      => 'Off',
+        'data-onstyle'  => 'primary',
+        'data-offstyle' => 'primary',
         ], $attributes))
     }}
     </div>
@@ -19,3 +21,14 @@
         </span>
     @endif
 </div>
+
+@section('scripts')
+    <script>
+        $('.bs-toggle')
+            .bootstrapToggle()
+            .change(function() {
+                    $(this).val($(this).prop('checked') ? '{{ $value['on'] }}' : '{{ $value['off'] }}');
+                }
+            );
+    </script>
+@endsection

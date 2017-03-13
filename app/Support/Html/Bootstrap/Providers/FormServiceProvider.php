@@ -38,8 +38,8 @@ class FormServiceProvider extends AbstractServiceProvider
 
         /* Checkbox */
         Form::component('bsCheckbox', $this->view('components.form.checkbox'), ['name', 'label', 'value', 'checked', 'attributes' => [], 'links' => []]);
-        Form::component('bsToggle', $this->view('components.form.toggle'), ['name', 'label', 'value', 'checked', 'attributes' => []]);
-        Form::component('bsCheckboxTermos', $this->view('components.form.checkbox_termos'), ['name', 'label', 'value', 'attributes' => []]);
+        Form::component('bsToggle', $this->view('components.form.toggle'), ['name', 'label', 'value' => [], 'checked', 'attributes' => []]);
+        Form::component('bsCheckboxTermos', $this->view('components.form.checkbox_termos'), ['name', 'label', 'value', 'checked', 'attributes' => [], 'links' => []]);
 
         /* Grupos de campos */
         Form::component('bsEndereco', $this->view('components.form.endereco'), ['nameArray' => null, 'attributes' => []]);

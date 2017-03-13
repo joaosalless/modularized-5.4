@@ -12,38 +12,23 @@ class PersonRules extends Rules
     public function defaultRules()
     {
         return [
-
+            'nome' => 'required',
         ];
     }
 
     public function creating($callback = null)
     {
         return $this->returnRules([
-            'nome'            => 'required',
-            'apelido'         => 'required',
-            'cpf'             => 'required',
-            'sexo'            => 'required',
-            'data_nascimento' => 'required',
-            'telefone'        => 'required',
-            'celular'         => 'required',
-            'cep'             => 'required',
-            'logradouro'      => 'required',
-            'numero'          => 'required',
-            'bairro'          => 'required',
-            'municipio'       => 'required',
-            'uf'              => 'required',
+
         ], $callback);
     }
 
     public function updating($callback = null)
     {
         return $this->returnRules([
-            'nome'            => 'required',
-            'apelido'         => 'required',
             'cpf'             => 'required',
             'sexo'            => 'required',
             'data_nascimento' => 'required',
-            'telefone'        => 'required',
             'celular'         => 'required',
             'cep'             => 'required',
             'logradouro'      => 'required',

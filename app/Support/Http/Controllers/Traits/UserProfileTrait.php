@@ -39,7 +39,7 @@ trait UserProfileTrait
         $this->addMedias($entity);
 
         $response = [
-            'message' => trans("profile_updated", ['model' => $entity->getEntityShortName()]),
+            'message' => trans("{$entity->getEntityDomainAlias()}::{$entity->getEntityTranslationKey()}.profile_updated", ['model' => $entity->getEntityShortName()]),
             'data'    => $entity->toArray(),
         ];
 

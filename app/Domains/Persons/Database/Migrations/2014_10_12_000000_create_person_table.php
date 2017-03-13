@@ -16,19 +16,18 @@ class CreatePersonTable extends Migration
         Schema::create('persons', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nome');
-            $table->string('apelido');
-            $table->string('cnpj')->index();
+            $table->string('apelido')->nullable();
+            $table->string('cpf')->nullable()->index();
             $table->uuid('user_id')->nullable()->index();
             $table->string('user_type')->nullable()->index();
-            $table->date('data_fundacao')->nullable()->index();
-            $table->string('inscricao_estadual')->nullable();
+            $table->date('data_nascimento')->nullable()->index();
+            $table->string('sexo')->nullable()->index();
             $table->string('telefone')->nullable()->index();
             $table->string('celular')->nullable()->index();
             $table->string('cep')->nullable()->index();
             $table->string('logradouro')->nullable();
             $table->string('numero')->nullable();
             $table->string('complemento')->nullable();
-            $table->string('observacao')->nullable();
             $table->string('bairro')->nullable();
             $table->string('municipio')->nullable();
             $table->string('uf')->nullable();

@@ -2,6 +2,7 @@
 
 namespace App\Domains\Medias;
 
+use App\Domains\Medias\Presenters\MediaViewPresenter;
 use App\Domains\Medias\Rules\MediaRules;
 use App\Support\Database\Eloquent\Contracts\ModelContract;
 use App\Support\Database\Eloquent\Traits\EloquentUuid;
@@ -38,6 +39,7 @@ class Media extends MediaModel implements Transformable, HasMedia, ModelContract
     protected $table                 = 'media';
     protected $mediaCategorySlug     = 'medias';
     protected $rulesFrom             = MediaRules::class;
+    protected $presenter             = MediaViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',
@@ -60,22 +62,18 @@ class Media extends MediaModel implements Transformable, HasMedia, ModelContract
         'file_name',
         'disk',
         'size',
+        'mime_type',
         'manipulations',
-        'dominant_color',
         'custom_properties',
         'order_column',
-        'created_at',
-        'updated_at',
-        'deleted_at',
         'is_cover',
         'in_carousel',
-        'mime',
         'extension',
         'category_id',
         'category_slug',
         'title',
         'description',
-        'seo_share',
+        'dominant_color',
         'active',
     ];
 

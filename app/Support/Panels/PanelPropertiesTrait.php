@@ -8,6 +8,7 @@ use Exception;
 trait PanelPropertiesTrait
 {
     protected $guardModel;
+    protected $guardModelRepository;
     protected $redirectOnLoginToUrl;
     protected $redirectOnLogoutToUrl;
 
@@ -107,6 +108,14 @@ trait PanelPropertiesTrait
         return !empty(config())
             ? config("auth.providers.{$this->authProvider()}.model")
             : $this->config['auth']['providers'][$this->authProvider()]['model'];
+    }
+
+
+    public function makeGuardModelRepository()
+    {
+        $repository = app()->make($this->makeGuardModel()->getRepository());
+
+        return $this->guardModelRepository = $repository;
     }
 
 

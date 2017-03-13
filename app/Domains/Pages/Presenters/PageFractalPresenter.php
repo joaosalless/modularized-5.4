@@ -5,12 +5,17 @@ namespace App\Domains\Pages\Presenters;
 use App\Domains\Pages\Transformers\PageTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
-class PageFractalPresenter extends FractalPresenter {
-
+/**
+ * Class PageFractalPresenter
+ *
+ * @package  App\Domains\Pages
+ */
+class PageFractalPresenter extends FractalPresenter
+{
     /**
-     * Prepare data to present
+     * Transformer
      *
-     * @return \League\Fractal\TransformerAbstract
+     * @return  \League\Fractal\TransformerAbstract
      */
     public function getTransformer()
     {

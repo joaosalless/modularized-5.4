@@ -19,19 +19,7 @@ class CompanyRules extends Rules
     public function creating($callback = null)
     {
         return $this->returnRules([
-            'razao_social'       => 'required',
             'nome_fantasia'      => 'required',
-            'cnpj'               => 'required',
-            'data_fundacao'      => 'required',
-            'inscricao_estadual' => 'required',
-            'telefone'           => 'required',
-            'celular'            => 'required',
-            'cep'                => 'required',
-            'logradouro'         => 'required',
-            'numero'             => 'required',
-            'bairro'             => 'required',
-            'municipio'          => 'required',
-            'uf'                 => 'required',
         ], $callback);
     }
 

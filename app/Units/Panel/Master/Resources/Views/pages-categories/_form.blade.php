@@ -1,22 +1,22 @@
 <div class="row">
 
     <div class="col-md-12">
-        {{ Form::bsText('title', trans('pages::category.title'), null, []) }}
+        {{ Form::bsText('title', $entity->getLabel('title'), null, []) }}
     </div>
 
 
     <div class="col-md-12">
-        {{ Form::bsText('slug', trans('pages::category.slug'), null, []) }}
+        {{ Form::bsText('slug', $entity->getLabel('slug'), null, []) }}
     </div>
 
 
     <div class="col-md-12">
-        {{ Form::bsTextarea('intro', trans('pages::category.intro'), null, []) }}
+        {{ Form::bsTextarea('intro', $entity->getLabel('intro'), null, []) }}
     </div>
 
 
     <div class="col-md-12">
-        {{ Form::bsTextarea('body', trans('pages::category.body'), null, []) }}
+        {{ Form::bsTextarea('body', $entity->getLabel('body'), null, []) }}
     </div>
 
 

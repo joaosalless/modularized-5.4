@@ -2,10 +2,21 @@
 
 namespace App\Support\Database\Eloquent\Traits;
 
+use ReflectionClass;
+
 trait ModelUtilsTrait
 {
     use ModelDevUtilsTrait;
 
+    public function getReflectionClass()
+    {
+        return (new ReflectionClass($this));
+    }
+
+    public function getRepository()
+    {
+        return $this->getReflectionClass()->getNamespaceName().'\Repositories\\'. $this->getReflectionClass()->getShortName() .'Repository';
+    }
 
     public function getTitle()
     {

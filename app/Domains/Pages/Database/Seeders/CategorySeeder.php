@@ -6,6 +6,10 @@ use App\Domains\Pages\Category;
 use App\Domains\Pages\Page;
 use Illuminate\Database\Seeder;
 
+/**
+ * Class CategorySeeder
+ * @package  App\Domains\Pages
+ */
 class CategorySeeder extends Seeder
 {
     public function run()

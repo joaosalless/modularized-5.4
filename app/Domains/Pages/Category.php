@@ -2,6 +2,7 @@
 
 namespace App\Domains\Pages;
 
+use App\Domains\Pages\Presenters\CategoryViewPresenter;
 use App\Domains\Pages\Rules\CategoryRules;
 use App\Support\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -21,6 +22,7 @@ class Category extends Model
     protected $table                 = 'pages_categories';
     protected $mediaCategorySlug     = 'pages_categories';
     protected $rulesFrom             = CategoryRules::class;
+    protected $presenter             = CategoryViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',
@@ -43,10 +45,5 @@ class Category extends Model
     public function pages()
     {
         return $this->hasMany(Page::class, 'category_id', 'id');
-    }
-
-    public function subcategories()
-    {
-        return $this->hasMany(Unit::class, 'unit_id', 'id');
     }
 }

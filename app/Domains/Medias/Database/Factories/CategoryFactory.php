@@ -19,7 +19,6 @@ class CategoryFactory extends ModelFactory
             'slug'        => Str::slug($title),
             'intro'       => "{$this->faker->sentence}",
             'body'        => "{$this->faker->sentence}",
-            'seo'         => '',
         ];
     }
 }

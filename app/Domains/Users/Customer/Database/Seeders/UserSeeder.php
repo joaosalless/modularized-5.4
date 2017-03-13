@@ -3,6 +3,7 @@
 namespace App\Domains\Users\Customer\Database\Seeders;
 
 use App\Domains\Companies\Company;
+use App\Domains\Persons\Person;
 use App\Domains\Users\Customer\User;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,11 @@ class UserSeeder extends Seeder
             $user->profile()->associate(factory(Company::class)->create([
                 'nome_fantasia' => 'MY COMPANY'
             ]));
+            $user->save();
+        });
+
+        factory(User::class, 1)->create()->each(function ($user) {
+            $user->profile()->associate(factory(Person::class)->create());
             $user->save();
         });
 

@@ -3,7 +3,7 @@
 
 namespace {{ $entity['reflectionClass']->getNamespaceName() }}\Repositories;
 
-use {{ $entity['reflectionClass']->getNamespaceName() }}\Entity;
+use {{ $entity['reflectionClass']->getNamespaceName() }}\{{ $entity['reflectionClass']->getShortName() }};
 use App\Support\Repositories\RepositoryEloquent;
 use {{ $entity['reflectionClass']->getNamespaceName() }}\Presenters\{{ $entity['reflectionClass']->getShortName() }}FractalPresenter;
 
@@ -14,7 +14,9 @@ use {{ $entity['reflectionClass']->getNamespaceName() }}\Presenters\{{ $entity['
 class {{ $entity['reflectionClass']->getShortName() }}RepositoryEloquent extends RepositoryEloquent implements {{ $entity['reflectionClass']->getShortName() }}Repository
 {
     protected $fieldSearchable = [
-
+    @foreach($entity['searchable'] as $key => $col)
+        '{{ $key }}' => '{{ $col }}',
+    @endforeach
     ];
 
     /**

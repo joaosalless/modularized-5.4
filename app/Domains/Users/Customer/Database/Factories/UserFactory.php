@@ -15,11 +15,8 @@ class UserFactory extends ModelFactory
     {
         static $password;
 
-        $nome = $this->faker->firstNameMale;
-        $sobrenome = $this->faker->lastName;
-
         return [
-            'username'            => Str::slug($nome . '-' . $sobrenome),
+            'username'            => null,
             'email'               => $this->faker->unique()->safeEmail,
             'password'            => $password ?: $password = bcrypt('123456'),
             'remember_token'      => str_random(10),
@@ -27,8 +24,13 @@ class UserFactory extends ModelFactory
             'profile_id'          => null,
             'profile_type'        => null,
             'role'                => null,
-            'status'              => null,
+            'email_verified'      => false,
             'email_verified_at'   => null,
+            'banned'              => false,
+            'banned_at'           => null,
+            'last_login'          => null,
+            'last_activity'       => null,
+            'active'              => true,
         ];
     }
 }

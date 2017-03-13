@@ -11,25 +11,26 @@ class PersonFactory extends ModelFactory
 
     protected function fields()
     {
+        $name = $this->faker->name;
+
         return [
-            'razao_social'       => $this->faker->company,
-            'nome_fantasia'      => $this->faker->company,
-            'cnpj'               => $this->faker->cnpj,
-            'data_fundacao'      => $this->faker->date(),
-            'inscricao_estadual' => 'Isento',
-            'telefone'           => $this->faker->phoneNumber,
-            'celular'            => $this->faker->phoneNumber,
-            'cep'                => $this->faker->postcode,
-            'logradouro'         => $this->faker->streetAddress,
-            'numero'             => $this->faker->numberBetween(100, 2000),
-            'complemento'        => null,
-            'observacao'         => null,
-            'bairro'             => null,
-            'municipio'          => null,
-            'uf'                 => null,
-            'ibge'               => null,
-            'site'               => null,
-            'social'             => null,
+            'nome'            => $name,
+            'apelido'         => str_slug($name),
+            'cpf'             => $this->faker->cpf,
+            'data_nascimento' => $this->faker->date(),
+            'sexo'            => $this->faker->randomElement(['M', 'F']),
+            'telefone'        => $this->faker->phoneNumber,
+            'celular'         => $this->faker->phoneNumber,
+            'cep'             => $this->faker->postcode,
+            'logradouro'      => $this->faker->streetAddress,
+            'numero'          => $this->faker->numberBetween(100, 2000),
+            'complemento'     => null,
+            'bairro'          => null,
+            'municipio'       => null,
+            'uf'              => null,
+            'ibge'            => null,
+            'site'            => null,
+            'social'          => null,
         ];
     }
 }

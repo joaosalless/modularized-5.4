@@ -1,44 +1,38 @@
-
 <div class="col-md-6">
-    {{ Form::bsText('profile[nome]', 'Nome', null, []) }}
+    {{ Form::bsText('profile[nome]', $entity->getLabel('nome'), null, []) }}
 </div>
 
-
 <div class="col-md-6">
-    {{ Form::bsCpf('profile[cpf]', 'CPF', null, []) }}
+    {{ Form::bsText('profile[apelido]', $entity->getLabel('apelido'), null, []) }}
 </div>
 
-
 <div class="col-md-6">
-    {{ Form::bsText('profile[apelido]', 'Apelido', null, []) }}
+    {{ Form::bsCpf('profile[cpf]', $entity->getLabel('cpf'), null, []) }}
 </div>
 
-
 <div class="col-md-6">
-    {{ Form::bsText('profile[sexo]', 'Sexo', null, []) }}
+    {{ Form::bsDate('profile[data_nascimento]', $entity->getLabel('data_nascimento'), $entity->present()->getDataNascimentoDate, []) }}
 </div>
-
-
-<div class="col-md-6">
-    {{ Form::bsDate('profile[data_nascimento]', 'Data de nascimento', $entity->profile->data_nascimento->format('d/m/Y'), []) }}
-</div>
-
-
-<div class="col-md-6">
-    {{ Form::bsPhone('profile[telefone]', 'Telefone', null, []) }}
-</div>
-
-
-<div class="col-md-6">
-    {{ Form::bsPhone('profile[celular]', 'Celular', null, []) }}
-</div>
-
 
 {{--<div class="col-md-6">--}}
-    {{--{{ Form::bsText('profile[avatar]', 'Avatar', null, []) }}--}}
+    {{--{{ Form::bsToggle('profile[sexo]', $entity->getLabel('sexo'), ['on' => 'M', 'off' => 'F'], $entity->sexo, [--}}
+        {{--'data-on'   => '<i class="fa fa-fw fa-male"></i> Masculino',--}}
+        {{--'data-off'  => '<i class="fa fa-fw fa-female"></i> Feminino',--}}
+        {{--'data-size' => 'normal',--}}
+    {{--]) }}--}}
 {{--</div>--}}
 
+<div class="col-md-6">
+    {{ Form::bsSelect('profile[sexo]', $entity->getLabel('sexo'), [
+        'F' => $entity->getLabel('female'),
+        'M' => $entity->getLabel('male')
+    ], $entity->sexo, []) }}
+</div>
 
-{{--<div class="col-md-6">--}}
-    {{--{{ Form::bsText('profile[site]', 'Site', null, []) }}--}}
-{{--</div>--}}
+<div class="col-md-6">
+    {{ Form::bsPhone('profile[telefone]', $entity->getLabel('telefone'), null, []) }}
+</div>
+
+<div class="col-md-6">
+    {{ Form::bsPhone('profile[celular]', $entity->getLabel('celular'), null, []) }}
+</div>

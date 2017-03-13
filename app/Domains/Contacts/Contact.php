@@ -2,6 +2,7 @@
 
 namespace App\Domains\Contacts;
 
+use App\Domains\Contacts\Presenters\ContactViewPresenter;
 use App\Domains\Contacts\Rules\ContactRules;
 use App\Support\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -21,6 +22,7 @@ class Contact extends Model
     protected $table                 = 'contact_form';
     protected $mediaCategorySlug     = 'contact_form';
     protected $rulesFrom             = ContactRules::class;
+    protected $presenter             = ContactViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',
@@ -29,6 +31,8 @@ class Contact extends Model
 
     protected $dates = [
         'deleted_at',
+        'created_at',
+        'updated_at',
     ];
 
     protected $fillable = [

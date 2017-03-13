@@ -3,7 +3,6 @@
 namespace App\Support\Http\Controllers\Auth;
 
 use App\Support\Http\Controllers\Auth\Traits\AuthenticatesUsers;
-use App\Support\Http\Controllers\Auth\Traits\HasViewsTrait;
 
 abstract class LoginController extends Controller
 {
@@ -18,15 +17,5 @@ abstract class LoginController extends Controller
     |
     */
 
-    use HasViewsTrait;
     use AuthenticatesUsers;
-
-    /**
-     * Create a new controller instance.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->middleware('guest', ['except' => 'logout']);
-    }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Domains\Users\Master\Rules;
 
-use App\Domains\Users\Cliente\User;
+use App\Domains\Users\Master\User;
 use App\Support\Database\Eloquent\Contracts\UserContract;
 use App\Support\Rules\Rules;
 
@@ -15,7 +15,7 @@ class UserRules extends Rules
     public function defaultRules()
     {
         return [
-
+            'username' => "unique:{$this->entity->getTable()}",
         ];
     }
 
@@ -25,8 +25,9 @@ class UserRules extends Rules
         return $this->returnRules(array_merge(
             [
                 'email'    => "required|email|max:255|unique:{$this->entity->getTable()}",
-                'password' => 'required|min:6',
-            ], $this->getProfileRules($this->entity)
+                'password' => "required|min:6",
+                'terms'    => 'required',
+            ], $this->getProfileRules($this->entity, 'creating')
         ), $callback);
     }
 
@@ -36,7 +37,7 @@ class UserRules extends Rules
         return $this->returnRules(array_merge(
             [
 
-            ], $this->getProfileRules($this->entity)
+            ], $this->getProfileRules($this->entity, 'updating')
         ), $callback);
     }
 
@@ -49,8 +50,8 @@ class UserRules extends Rules
     }
 
 
-    public function getProfileRules(UserContract $entity)
+    public function getProfileRules(UserContract $entity, $action)
     {
-        return $entity->profile ? array_dot(['profile' => $entity->profile->rules()->updating()]) : null;
+        return $entity->profile ? array_dot(['profile' => $entity->profile->rules()->{$action}()]) : [];
     }
 }

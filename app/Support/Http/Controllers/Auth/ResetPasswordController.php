@@ -2,7 +2,6 @@
 
 namespace App\Support\Http\Controllers\Auth;
 
-use App\Support\Http\Controllers\Auth\Traits\HasViewsTrait;
 use App\Support\Http\Controllers\Auth\Traits\ResetsPasswords;
 
 abstract class ResetPasswordController extends Controller
@@ -18,22 +17,6 @@ abstract class ResetPasswordController extends Controller
     |
     */
 
-    use HasViewsTrait;
     use ResetsPasswords;
 
-    /**
-     * Where to redirect users after resetting their password.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
-
-    /**
-     * Create a new controller instance.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->middleware('guest');
-    }
 }

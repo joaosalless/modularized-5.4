@@ -23,7 +23,6 @@ class CompanyFactory extends ModelFactory
             'logradouro'         => $this->faker->streetAddress,
             'numero'             => $this->faker->numberBetween(100, 2000),
             'complemento'        => null,
-            'observacao'         => null,
             'bairro'             => null,
             'municipio'          => null,
             'uf'                 => null,

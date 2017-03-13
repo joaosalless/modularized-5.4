@@ -1,138 +1,155 @@
-<tr>
-    <th>
-        Nome
-    <th>
-    <td>
-    {{ $entity->profile->nome }}
-    <td>
-</tr>
-
 
 <tr>
     <th>
-        CPF
+    {{ $entity->profile->getLabel('nome') }}
     <th>
     <td>
-    {{ $entity->profile->cpf }}
+    {{ $entity->profile->present()->getNome }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Apelido
+    {{ $entity->profile->getLabel('apelido') }}
     <th>
     <td>
-    {{ $entity->profile->apelido }}
+    {{ $entity->profile->present()->getApelido }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Sexo
+    {{ $entity->profile->getLabel('cpf') }}
     <th>
     <td>
-    {{ $entity->profile->sexo == 'M' ? 'Masculino' : 'Feminino' }}
+    {{ $entity->profile->present()->getCpf }}
     <td>
 </tr>
 
+@if($entity->profile->data_nascimento)
+    <tr>
+        <th>
+        {{ $entity->profile->getLabel('data_nascimento') }}
+        <th>
+        <td>
+        {{ $entity->profile->present()->getDataNascimento }}
+        <td>
+    </tr>
+@endif
 
 <tr>
     <th>
-        Data de nascimento
+    {{ $entity->profile->getLabel('sexo') }}
     <th>
     <td>
-    {{ $entity->profile->data_nascimento->format('d/m/Y') }}
+    {{ $entity->profile->present()->getSexo }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Telefone
+    {{ $entity->profile->getLabel('telefone') }}
     <th>
     <td>
-    {{ $entity->profile->telefone }}
+    {{ $entity->profile->present()->getTelefone }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Celular
+    {{ $entity->profile->getLabel('celular') }}
     <th>
     <td>
-    {{ $entity->profile->celular }}
+    {{ $entity->profile->present()->getCelular }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        CEP
+    {{ $entity->profile->getLabel('cep') }}
     <th>
     <td>
-    {{ $entity->profile->cep }}
+    {{ $entity->profile->present()->getCep }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Logradouro
+    {{ $entity->profile->getLabel('logradouro') }}
     <th>
     <td>
-    {{ $entity->profile->logradouro }}
+    {{ $entity->profile->present()->getLogradouro }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Número
+    {{ $entity->profile->getLabel('numero') }}
     <th>
     <td>
-    {{ $entity->profile->numero }}
+    {{ $entity->profile->present()->getNumero }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Complemento
+    {{ $entity->profile->getLabel('complemento') }}
     <th>
     <td>
-    {{ $entity->profile->complemento }}
+    {{ $entity->profile->present()->getComplemento }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Bairro
+    {{ $entity->profile->getLabel('bairro') }}
     <th>
     <td>
-    {{ $entity->profile->bairro }}
+    {{ $entity->profile->present()->getBairro }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Município
+    {{ $entity->profile->getLabel('municipio') }}
     <th>
     <td>
-    {{ $entity->profile->municipio }}
+    {{ $entity->profile->present()->getMunicipio }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        UF
+    {{ $entity->profile->getLabel('uf') }}
     <th>
     <td>
-    {{ $entity->profile->uf }}
+    {{ $entity->profile->present()->getUf }}
     <td>
 </tr>
+
+<tr>
+    <th>
+    {{ $entity->profile->getLabel('ibge') }}
+    <th>
+    <td>
+    {{ $entity->profile->present()->getIbge }}
+    <td>
+</tr>
+
+{{--<tr>--}}
+    {{--<th>--}}
+    {{--{{ $entity->profile->getLabel('site') }}--}}
+    {{--<th>--}}
+    {{--<td>--}}
+    {{--{{ $entity->profile->present()->getSite }}--}}
+    {{--<td>--}}
+{{--</tr>--}}
+
+{{--<tr>--}}
+    {{--<th>--}}
+    {{--{{ $entity->profile->getLabel('social') }}--}}
+    {{--<th>--}}
+    {{--<td>--}}
+    {{--{{ $entity->profile->present()->getSocial }}--}}
+    {{--<td>--}}
+{{--</tr>--}}

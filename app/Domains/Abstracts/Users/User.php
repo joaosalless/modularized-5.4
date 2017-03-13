@@ -59,6 +59,23 @@ abstract class User extends Authenticatable implements UserContract,
     protected $authRouteAlias;
     protected $rulesFrom;
     protected $seederFrom;
+    protected $reflectionClass;
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected $with = ['profile'];
+
+    protected $appends = ['name'];
+
+    public function testUser(): array
+    {
+        $testUser = (new $this->seederFrom)->getTestUser();
+
+        return env('APP_ENV') === 'local' ? $testUser : ['email' => '', 'password' => ''];
+    }
 
     public function isNotifiable() : bool
     {
@@ -119,13 +136,6 @@ abstract class User extends Authenticatable implements UserContract,
             ->orWhere('description', 'like', 'login%')
             ->orWhere('description', 'like', 'password updated successful')
             ->take(15);
-    }
-
-    public function testUser(): array
-    {
-        $testUser = (new $this->seederFrom)->getTestUser();
-
-        return env('APP_ENV') === 'local' ? $testUser : ['email' => '', 'password' => ''];
     }
 
     public function homeUrl(): string

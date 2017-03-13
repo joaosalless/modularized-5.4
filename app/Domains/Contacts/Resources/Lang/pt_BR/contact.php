@@ -1,5 +1,12 @@
 <?php
 
+/*
+|----------------------------------------------------------------------------
+| Contact Language Lines
+|----------------------------------------------------------------------------
+| The following language lines are used by Class App\Domains\Contacts\Contact
+*/
+
 return array_merge(
 
     Lang::get('abstracts_entities::entity_male'),

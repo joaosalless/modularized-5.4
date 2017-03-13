@@ -24,7 +24,8 @@ class UserRules extends Rules
         return $this->returnRules(array_merge(
             [
                 'email'    => "required|email|max:255|unique:{$this->entity->getTable()}",
-                'password' => 'required|min:6',
+                'password' => "required|min:6",
+                'terms'    => 'required',
             ], $this->getProfileRules($this->entity, 'creating')
         ), $callback);
     }
@@ -50,6 +51,6 @@ class UserRules extends Rules
 
     public function getProfileRules(UserContract $entity, $action)
     {
-        return $entity->profile ? array_dot(['profile' => $entity->profile->rules()->{$action}()]) : null;
+        return $entity->profile ? array_dot(['profile' => $entity->profile->rules()->{$action}()]) : [];
     }
 }

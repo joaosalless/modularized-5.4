@@ -12,7 +12,8 @@ class CategoryRules extends AbstractCategoryRules
     public function defaultRules()
     {
         return [
-
+            'title' => 'required',
+            'slug'  => 'required',
         ];
     }
 

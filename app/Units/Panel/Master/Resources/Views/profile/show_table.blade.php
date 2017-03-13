@@ -10,21 +10,41 @@
     <table class="{{ $panel->unitConfig()['theme']['table']['class'] }}">
         <tbody>
 
-            <tr>
-                <th style="width: 200px;">
-                    ID
-                <th>
-                <td>
-                {{ $entity->profile->id }}
-                <td>
-            </tr>
+        <tr>
+            <th>
+            {{ $entity->getLabel('user_id') }}
+            <th>
+            <td>
+            {{ $entity->id }}
+            <td>
+        </tr>
+
+        {{--<tr>--}}
+            {{--<th>--}}
+            {{--{{ $entity->getLabel('username') }}--}}
+            {{--<th>--}}
+            {{--<td>--}}
+            {{--{{ $entity->present()->getUsername }}--}}
+            {{--<td>--}}
+        {{--</tr>--}}
+
+        <tr>
+            <th>
+            {{ $entity->getLabel('email') }}
+            <th>
+            <td>
+            {{ $entity->present()->getEmail }}
+            <td>
+        </tr>
+
+        @if($entity->profile)
 
             <tr>
-                <th style="width: 200px;">
-                    Email
+                <th>
+                {{ $entity->getLabel('profile_type') }}
                 <th>
                 <td>
-                {{ $entity->email }}
+                {{ trans("abstracts_user::user.{$entity->profile_type}") }}
                 <td>
             </tr>
 
@@ -38,23 +58,47 @@
 
             <tr>
                 <th>
-                    Criado em
+                {{ $entity->getLabel('active') }}
                 <th>
                 <td>
-                    {{ $entity->profile->created_at->format('d/m/Y H:i:s') }}
-                    ({{ $entity->profile->created_at->diffForHumans() }})
+                {{ $entity->present()->getActive }}
                 <td>
             </tr>
 
-            <tr>
-                <th>
-                    Atualizado em
-                <th>
-                <td>
-                    {{ $entity->profile->updated_at->format('d/m/Y H:i:s') }}
-                    ({{ $entity->profile->updated_at->diffForHumans() }})
-                <td>
-            </tr>
+            @if($entity->deleted_at)
+                <tr>
+                    <th>
+                    {{ $entity->getLabel('deleted_at') }}
+                    <th>
+                    <td>
+                    {{ $entity->present()->getDeletedAt }}
+                    <td>
+                </tr>
+            @endif
+
+            @if($entity->created_at)
+                <tr>
+                    <th>
+                    {{ $entity->getLabel('created_at') }}
+                    <th>
+                    <td>
+                    {{ $entity->present()->getCreatedAt }}
+                    <td>
+                </tr>
+            @endif
+
+            @if($entity->updated_at)
+                <tr>
+                    <th>
+                    {{ $entity->getLabel('updated_at') }}
+                    <th>
+                    <td>
+                    {{ $entity->present()->getUpdatedAt }}
+                    <td>
+                </tr>
+            @endif
+
+        @endif
 
         </tbody>
 

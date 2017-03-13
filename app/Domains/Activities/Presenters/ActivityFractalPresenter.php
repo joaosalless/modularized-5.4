@@ -5,12 +5,17 @@ namespace App\Domains\Activities\Presenters;
 use App\Domains\Activities\Transformers\ActivityTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
-class ActivityFractalPresenter extends FractalPresenter {
-
+/**
+ * Class ActivityFractalPresenter
+ *
+ * @package  App\Domains\Activities
+ */
+class ActivityFractalPresenter extends FractalPresenter
+{
     /**
-     * Prepare data to present
+     * Transformer
      *
-     * @return \League\Fractal\TransformerAbstract
+     * @return  \League\Fractal\TransformerAbstract
      */
     public function getTransformer()
     {

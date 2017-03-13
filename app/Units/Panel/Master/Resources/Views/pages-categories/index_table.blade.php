@@ -6,9 +6,9 @@
         <table class="{{ $panel->unitConfig()['theme']['table']['class'] }}">
             <thead>
                 <tr>
-                    <th>{{ trans('pages::category.title') }}</th>
-                    <th>{{ trans('pages::category.slug') }}</th>
-                    <th>{{ trans('pages::category.pages') }}</th>
+                    <th>{{ $entity->getLabel('title') }}</th>
+                    <th>{{ $entity->getLabel('slug') }}</th>
+                    <th>{{ $entity->getLabel('pages') }}</th>
                     @include("{$panel->unitAlias()}::shared.list.model_medias_th")
                     @include("{$panel->unitAlias()}::shared.list.model_actions_th")
                 </tr>

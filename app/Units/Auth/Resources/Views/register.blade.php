@@ -1,14 +1,7 @@
 @extends('auth::layouts.default')
 
-@section('head_styles')
-    <style>
-        body {
-            background: url({{asset('/img/panels/master/bg.jpg')}}) center center;
-        }
-    </style>
-@endsection
-
 @section('content')
+
 <div class="container">
 
     <div class="overlay"></div>
@@ -20,7 +13,9 @@
                 'method' => 'post',
             ])!!}
             <div class="panel panel-default">
+
                 <div class="panel-heading">Cadastro de {{ $panel->makeGuardModel()->getEntityName() }}</div>
+
                 <div class="panel-body">
                     <div class="row">
 
@@ -29,28 +24,25 @@
                         </div>
 
                         <div class="col-md-12">
-                            {{ Form::bsText('name', 'Nome', null, []) }}
+                            {{ Form::bsSelect('profile_type', panel()->makeGuardModel()->getLabel('profile_type'), panel()->makeGuardModel()->getProfileTypes(), null, []) }}
                         </div>
 
                         <div class="col-md-12">
-                            {{ Form::bsText('email', 'Email', null, []) }}
+                            {{ Form::bsText('profile[name]', panel()->makeGuardModel()->getLabel('name'), null, []) }}
                         </div>
 
                         <div class="col-md-12">
-                            {{ Form::bsText('celular', 'Celular', null, []) }}
+                            {{ Form::bsEmail('email', panel()->makeGuardModel()->getLabel('email'), null, []) }}
                         </div>
 
                         <div class="col-md-12">
-                            {{ Form::bsPassword('password', 'Senha', []) }}
+                            {{ Form::bsPassword('password', panel()->makeGuardModel()->getLabel('password'), []) }}
                         </div>
-
-                        {{--<div class="col-md-12">--}}
-                            {{--{{ Form::bsPassword('password_confirmation', 'Confirme a Senha', []) }}--}}
-                        {{--</div>--}}
 
                         <div class="col-md-12">
-                            {{ Form::bsCheckboxTermos('termos_aceitos', 'Aceito os ', false, [], [['url' => url('/termos'), 'title' => 'Termos']]) }}
+                            {{ Form::bsCheckboxTermos('terms', 'Aceito os ', 1, false, [], ['terms' => ['url' => url('/termos'), 'title' => 'Termos de Serviço']]) }}
                         </div>
+
                     </div>
                 </div>
                 <div class="panel-body" style="border-top: 1px solid #ddd">

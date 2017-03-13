@@ -5,12 +5,17 @@ namespace App\Domains\Medias\Presenters;
 use App\Domains\Medias\Transformers\MediaTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
-class MediaFractalPresenter extends FractalPresenter {
-
+/**
+ * Class MediaFractalPresenter
+ *
+ * @package  App\Domains\Medias
+ */
+class MediaFractalPresenter extends FractalPresenter
+{
     /**
-     * Prepare data to present
+     * Transformer
      *
-     * @return \League\Fractal\TransformerAbstract
+     * @return  \League\Fractal\TransformerAbstract
      */
     public function getTransformer()
     {

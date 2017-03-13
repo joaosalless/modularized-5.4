@@ -1,4 +1,3 @@
-
 <div class="col-md-12">
 
     @include("{$panel->unitAlias()}::shared.show_table.header")
@@ -97,14 +96,16 @@
             <td>
         </tr>
 
-        <tr>
-            <th>
-            {{ $entity->getLabel('received_at') }}
-            <th>
-            <td>
-            {{ $entity->present()->getReceivedAt }}
-            <td>
-        </tr>
+        @if($entity->received_at)
+            <tr>
+                <th>
+                {{ $entity->getLabel('received_at') }}
+                <th>
+                <td>
+                {{ $entity->present()->getReceivedAt }}
+                <td>
+            </tr>
+        @endif
 
         <tr>
             <th>
@@ -133,32 +134,38 @@
             <td>
         </tr>
 
-        <tr>
-            <th>
-            {{ $entity->getLabel('deleted_at') }}
-            <th>
-            <td>
-            {{ $entity->present()->getDeletedAt }}
-            <td>
-        </tr>
+        @if($entity->deleted_at)
+            <tr>
+                <th>
+                {{ $entity->getLabel('deleted_at') }}
+                <th>
+                <td>
+                {{ $entity->present()->getDeletedAt }}
+                <td>
+            </tr>
+        @endif
 
-        <tr>
-            <th>
-            {{ $entity->getLabel('created_at') }}
-            <th>
-            <td>
-            {{ $entity->present()->getCreatedAt }}
-            <td>
-        </tr>
+        @if($entity->created_at)
+            <tr>
+                <th>
+                {{ $entity->getLabel('created_at') }}
+                <th>
+                <td>
+                {{ $entity->present()->getCreatedAt }}
+                <td>
+            </tr>
+        @endif
 
-        <tr>
-            <th>
-            {{ $entity->getLabel('updated_at') }}
-            <th>
-            <td>
-            {{ $entity->present()->getUpdatedAt }}
-            <td>
-        </tr>
+        @if($entity->updated_at)
+            <tr>
+                <th>
+                {{ $entity->getLabel('updated_at') }}
+                <th>
+                <td>
+                {{ $entity->present()->getUpdatedAt }}
+                <td>
+            </tr>
+        @endif
 
         </tbody>
 

@@ -2,10 +2,8 @@
 
 namespace App\Support\Http\Controllers\Auth;
 
-use App\Support\Http\Controllers\Auth\Traits\HasViewsTrait;
 use App\Support\Http\Controllers\Auth\Traits\RegistersUsers;
-use App\Support\Panels\PanelProperties;
-use Validator;
+use Carbon\Carbon;
 
 abstract class RegisterController extends Controller
 {
@@ -20,47 +18,21 @@ abstract class RegisterController extends Controller
     |
     */
 
-    use HasViewsTrait;
     use RegistersUsers;
 
     protected $userRepository;
-
-    public function __construct()
-    {
-        parent::__construct();
-        $this->middleware('guest');
-    }
-
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array $data
-     *
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'nome'     => 'required|max:255',
-            'email'    => "required|email|max:255|unique:{$this->panel->makeGuardModel()->getTable()}",
-            'password' => 'required|min:6',
-        ]);
-    }
 
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array $data
-     *
-     * @return \App\Domains\Users\Base\User
      */
     protected function create(array $data)
     {
         return $this->userRepository->create([
-            'nome'     => $data['name'],
-            'email'    => $data['email'],
-            'celular'  => $data['celular'],
-            'password' => bcrypt($data['password']),
+            'email'               => $data['email'],
+            'password'            => bcrypt($data['password']),
+            'password_updated_at' => Carbon::now(),
         ]);
     }
 }

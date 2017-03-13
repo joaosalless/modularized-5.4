@@ -16,14 +16,14 @@ class CreateCustomerUsersTable extends Migration
         Schema::create('customer_users', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('username')->nullable()->unique();
-            $table->string('email')->unique();
+            $table->string('email')->unique()->index();
             $table->string('password');
             $table->dateTime('password_updated_at')->nullable();
             $table->rememberToken();
-            $table->uuid('profile_id')->nullable();
-            $table->string('profile_type')->nullable();
-            $table->string('role')->nullable();
-            $table->string('status')->nullable()->default('active');
+            $table->uuid('profile_id')->nullable()->index();
+            $table->string('profile_type')->nullable()->index();
+            $table->string('role')->nullable()->index();
+            $table->boolean('terms')->default(false);
             $table->boolean('email_verified')->default(false);
             $table->dateTime('email_verified_at')->nullable();
             $table->boolean('banned')->default(false);

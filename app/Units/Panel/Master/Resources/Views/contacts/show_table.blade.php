@@ -7,227 +7,243 @@
 
         <tr>
             <th>
-                {{ $entity->getLabel('id') }}
+            {{ $entity->getLabel('id') }}
             <th>
             <td>
-                {{ $entity->id }}
+            {{ $entity->present()->getId }}
             <td>
         </tr>
-
 
         <tr>
             <th>
-                {{ $entity->getLabel('name') }}
+            {{ $entity->getLabel('name') }}
             <th>
             <td>
-                {{ $entity->name }}
+            {{ $entity->present()->getName }}
             <td>
         </tr>
-
 
         <tr>
             <th>
-                {{ $entity->getLabel('email') }}
+            {{ $entity->getLabel('email') }}
             <th>
             <td>
-                {{ $entity->email }}
+            {{ $entity->present()->getEmail }}
             <td>
         </tr>
-
 
         <tr>
             <th>
-                {{ $entity->getLabel('phone') }}
+            {{ $entity->getLabel('phone') }}
             <th>
             <td>
-                {{ $entity->phone }}
+            {{ $entity->present()->getPhone }}
             <td>
         </tr>
-
 
         <tr>
             <th>
             {{ $entity->getLabel('cep') }}
             <th>
             <td>
-            {{ $entity->cep }}
+            {{ $entity->present()->getCep }}
             <td>
         </tr>
-
 
         <tr>
             <th>
             {{ $entity->getLabel('logradouro') }}
             <th>
             <td>
-            {{ $entity->logradouro }}
+            {{ $entity->present()->getLogradouro }}
             <td>
         </tr>
-
 
         <tr>
             <th>
             {{ $entity->getLabel('numero') }}
             <th>
             <td>
-            {{ $entity->numero }}
+            {{ $entity->present()->getNumero }}
             <td>
         </tr>
-
 
         <tr>
             <th>
             {{ $entity->getLabel('complemento') }}
             <th>
             <td>
-            {{ $entity->complemento }}
+            {{ $entity->present()->getComplemento }}
             <td>
         </tr>
 
+        <tr>
+            <th>
+            {{ $entity->getLabel('observacao') }}
+            <th>
+            <td>
+            {{ $entity->present()->getObservacao }}
+            <td>
+        </tr>
 
         <tr>
             <th>
             {{ $entity->getLabel('bairro') }}
             <th>
             <td>
-            {{ $entity->bairro }}
+            {{ $entity->present()->getBairro }}
             <td>
         </tr>
-
 
         <tr>
             <th>
             {{ $entity->getLabel('municipio') }}
             <th>
             <td>
-            {{ $entity->municipio }}
+            {{ $entity->present()->getMunicipio }}
             <td>
         </tr>
-
 
         <tr>
             <th>
             {{ $entity->getLabel('uf') }}
             <th>
             <td>
-            {{ $entity->uf }}
+            {{ $entity->present()->getUf }}
             <td>
         </tr>
-
 
         <tr>
             <th>
             {{ $entity->getLabel('ibge') }}
             <th>
             <td>
-            {{ $entity->ibge }}
+            {{ $entity->present()->getIbge }}
             <td>
         </tr>
-
 
         <tr>
             <th>
-                {{ $entity->getLabel('accept_html') }}
+            {{ $entity->getLabel('accept_html') }}
             <th>
             <td>
-                {{ $entity->accept_html ? 'Sim' : 'Não' }}
+            {{ $entity->present()->getAcceptHtml }}
             <td>
         </tr>
-
 
         <tr>
             <th>
-                {{ $entity->getLabel('auto_reply') }}
+            {{ $entity->getLabel('auto_reply') }}
             <th>
             <td>
-                {{ $entity->auto_reply ? 'Sim' : 'Não' }}
+            {{ $entity->present()->getAutoReply }}
             <td>
         </tr>
-
 
         <tr>
             <th>
-                {{ $entity->getLabel('save_messages') }}
+            {{ $entity->getLabel('save_messages') }}
             <th>
             <td>
-                {{ $entity->save_messages ? 'Sim' : 'Não' }}
+            {{ $entity->present()->getSaveMessages }}
             <td>
         </tr>
-
 
         <tr>
             <th>
-                {{ $entity->getLabel('require_captcha') }}
+            {{ $entity->getLabel('require_captcha') }}
             <th>
             <td>
-                {{ $entity->require_captcha ? 'Sim' : 'Não' }}
+            {{ $entity->present()->getRequireCaptcha }}
             <td>
         </tr>
-
 
         <tr>
             <th>
-                {{ $entity->getLabel('reply_message_site') }}
+            {{ $entity->getLabel('reply_message_site') }}
             <th>
             <td>
-                {!! $entity->reply_message_site !!}
+            {{ $entity->present()->getReplyMessageSite }}
             <td>
         </tr>
-
 
         <tr>
             <th>
-                {{ $entity->getLabel('reply_message_email') }}
+            {{ $entity->getLabel('reply_message_email') }}
             <th>
             <td>
-                {!! $entity->reply_message_email !!}
+            {{ $entity->present()->getReplyMessageEmail }}
             <td>
         </tr>
-
 
         <tr>
             <th>
-                {{ $entity->getLabel('active') }}
+            {{ $entity->getLabel('intro') }}
             <th>
             <td>
-                {{ $entity->active ? 'Sim' : 'Não' }}
+            {{ $entity->present()->getIntro }}
             <td>
         </tr>
 
+        <tr>
+            <th>
+            {{ $entity->getLabel('body') }}
+            <th>
+            <td>
+            {{ $entity->present()->getBody }}
+            <td>
+        </tr>
+
+        <tr>
+            <th>
+            {{ $entity->getLabel('layout') }}
+            <th>
+            <td>
+            {{ $entity->present()->getLayout }}
+            <td>
+        </tr>
+
+        <tr>
+            <th>
+            {{ $entity->getLabel('active') }}
+            <th>
+            <td>
+            {{ $entity->present()->getActive }}
+            <td>
+        </tr>
 
         @if($entity->deleted_at)
             <tr>
                 <th>
-                    {{ $entity->getLabel('deleted_at') }}
+                {{ $entity->getLabel('deleted_at') }}
                 <th>
                 <td>
-                    {{  $entity->deleted_at->format('d/m/Y H:i:s') }}
-                    ({{ $entity->deleted_at->diffForHumans() }})
+                {{ $entity->present()->getDeletedAt }}
                 <td>
             </tr>
         @endif
 
-
-        <tr>
-            <th>
+        @if($entity->created_at)
+            <tr>
+                <th>
                 {{ $entity->getLabel('created_at') }}
-            <th>
-            <td>
-                {{  $entity->created_at->format('d/m/Y H:i:s') }}
-                ({{ $entity->created_at->diffForHumans() }})
-            <td>
-        </tr>
+                <th>
+                <td>
+                {{ $entity->present()->getCreatedAt }}
+                <td>
+            </tr>
+        @endif
 
-
-        <tr>
-            <th>
+        @if($entity->updated_at)
+            <tr>
+                <th>
                 {{ $entity->getLabel('updated_at') }}
-            <th>
-            <td>
-                {{  $entity->updated_at->format('d/m/Y H:i:s') }}
-                ({{ $entity->updated_at->diffForHumans() }})
-            <td>
-        </tr>
+                <th>
+                <td>
+                {{ $entity->present()->getUpdatedAt }}
+                <td>
+            </tr>
+        @endif
 
         </tbody>
 

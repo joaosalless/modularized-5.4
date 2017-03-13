@@ -1,138 +1,196 @@
 <tr>
     <th>
-        Razão social
+    {{ $entity->getLabel('razao_social') }}
     <th>
     <td>
-    {{ $entity->profile->razao_social }}
+    {{ $entity->present()->getRazaoSocial }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Nome fantasia
+    {{ $entity->getLabel('nome_fantasia') }}
     <th>
     <td>
-    {{ $entity->profile->nome_fantasia }}
+    {{ $entity->present()->getNomeFantasia }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        CNPJ
+    {{ $entity->getLabel('cnpj') }}
     <th>
     <td>
-    {{ $entity->profile->cnpj }}
+    {{ $entity->present()->getCnpj }}
     <td>
 </tr>
 
+@if($entity->data_fundacao)
+    <tr>
+        <th>
+        {{ $entity->getLabel('data_fundacao') }}
+        <th>
+        <td>
+        {{ $entity->present()->getDataFundacao }}
+        <td>
+    </tr>
+@endif
 
 <tr>
     <th>
-        Data de fundação
+    {{ $entity->getLabel('inscricao_estadual') }}
     <th>
     <td>
-    {{ $entity->profile->data_fundacao->format('d/m/Y') }}
+    {{ $entity->present()->getInscricaoEstadual }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Inscrição estadual
+    {{ $entity->getLabel('telefone') }}
     <th>
     <td>
-    {{ $entity->profile->inscricao_estadual }}
+    {{ $entity->present()->getTelefone }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Telefone
+    {{ $entity->getLabel('celular') }}
     <th>
     <td>
-    {{ $entity->profile->telefone }}
+    {{ $entity->present()->getCelular }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Celular
+    {{ $entity->getLabel('cep') }}
     <th>
     <td>
-    {{ $entity->profile->celular }}
+    {{ $entity->present()->getCep }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        CEP
+    {{ $entity->getLabel('logradouro') }}
     <th>
     <td>
-    {{ $entity->profile->cep }}
+    {{ $entity->present()->getLogradouro }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Logradouro
+    {{ $entity->getLabel('numero') }}
     <th>
     <td>
-    {{ $entity->profile->logradouro }}
+    {{ $entity->present()->getNumero }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Número
+    {{ $entity->getLabel('complemento') }}
     <th>
     <td>
-    {{ $entity->profile->numero }}
+    {{ $entity->present()->getComplemento }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Complemento
+    {{ $entity->getLabel('observacao') }}
     <th>
     <td>
-    {{ $entity->profile->complemento }}
+    {{ $entity->present()->getObservacao }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Bairro
+    {{ $entity->getLabel('bairro') }}
     <th>
     <td>
-    {{ $entity->profile->bairro }}
+    {{ $entity->present()->getBairro }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        Município
+    {{ $entity->getLabel('municipio') }}
     <th>
     <td>
-    {{ $entity->profile->municipio }}
+    {{ $entity->present()->getMunicipio }}
     <td>
 </tr>
-
 
 <tr>
     <th>
-        UF
+    {{ $entity->getLabel('uf') }}
     <th>
     <td>
-    {{ $entity->profile->uf }}
+    {{ $entity->present()->getUf }}
     <td>
 </tr>
+
+<tr>
+    <th>
+    {{ $entity->getLabel('ibge') }}
+    <th>
+    <td>
+    {{ $entity->present()->getIbge }}
+    <td>
+</tr>
+
+<tr>
+    <th>
+    {{ $entity->getLabel('site') }}
+    <th>
+    <td>
+    {{ $entity->present()->getSite }}
+    <td>
+</tr>
+
+<tr>
+    <th>
+    {{ $entity->getLabel('social') }}
+    <th>
+    <td>
+    {{ $entity->present()->getSocial }}
+    <td>
+</tr>
+
+@if($entity->deleted_at)
+    <tr>
+        <th>
+        {{ $entity->getLabel('deleted_at') }}
+        <th>
+        <td>
+        {{ $entity->present()->getDeletedAt }}
+        <td>
+    </tr>
+@endif
+
+@if($entity->created_at)
+    <tr>
+        <th>
+        {{ $entity->getLabel('created_at') }}
+        <th>
+        <td>
+        {{ $entity->present()->getCreatedAt }}
+        <td>
+    </tr>
+@endif
+
+@if($entity->updated_at)
+    <tr>
+        <th>
+        {{ $entity->getLabel('updated_at') }}
+        <th>
+        <td>
+        {{ $entity->present()->getUpdatedAt }}
+        <td>
+    </tr>
+@endif

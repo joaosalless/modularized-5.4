@@ -76,4 +76,19 @@ class UserController extends Controller
 
         return $this->crudResponse($entity, 'updated');
     }
+
+    public function getActionButtons(): array
+    {
+        return array_merge(parent::getActionButtons(), [
+            'media' => [
+                'show'            => true,
+                'show_media'      => true,
+                'edit'            => true,
+                'destroy'         => true,
+                'toggle_trash'    => true,
+                'toggle_active'   => true,
+                'toggle_is_cover' => true,
+            ],
+        ]);
+    }
 }

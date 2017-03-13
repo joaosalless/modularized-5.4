@@ -121,6 +121,7 @@ return [
         'subject'                    => 'Assunto',
         'message'                    => 'Mensagem',
         'localidade'                 => 'Cidade',
+        'profile_type'               => 'Tipo de Perfil',
         "profile.razao_social"       => 'Razão Social',
         'profile.nome_fantasia'      => 'Nome Fantasia',
         'profile.cnpj'               => 'CNPJ',
@@ -144,7 +145,7 @@ return [
         'profile.uf'                 => 'Estado',
         //
         'categoria_id'               => 'Categoria',
-        'category_id'               => 'Categoria',
+        'category_id'                => 'Categoria',
     ],
 
 ];

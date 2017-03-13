@@ -10,107 +10,135 @@ use App\Support\Database\Eloquent\Presenters\ViewPresenter;
  */
 class CompanyViewPresenter extends ViewPresenter
 {
-    public function id()
+
+    public function getId()
     {
         return $this->id;
     }
 
-    public function razaoSocial()
+
+    public function getRazaoSocial()
     {
         return $this->razao_social;
     }
 
-    public function nomeFantasia()
+
+    public function getNomeFantasia()
     {
         return $this->nome_fantasia;
     }
 
-    public function cnpj()
+
+    public function getCnpj()
     {
         return $this->cnpj;
     }
 
-    public function userId()
+
+    public function getUserId()
     {
         return $this->user_id;
     }
 
-    public function userType()
+
+    public function getUserType()
     {
         return $this->user_type;
     }
 
-    public function dataFundacao()
+    public function getDataFundacao()
     {
-        return $this->data_fundacao;
+        return $this->data_fundacao ? $this->data_fundacao->format('d/m/Y H:i:s') : null;
     }
 
-    public function inscricaoEstadual()
+    public function getDataFundacaoDate()
+    {
+        return $this->data_fundacao ? $this->data_fundacao->format('d/m/Y') : null;
+    }
+
+    public function getDataFundacaoTime()
+    {
+        return $this->data_fundacao ? $this->data_fundacao->format('H:i:s') : null;
+    }
+
+    public function getDataFundacaoForHumans()
+    {
+        return $this->data_fundacao ? $this->data_fundacao->diffForHumans() : null;
+    }
+
+    public function getInscricaoEstadual()
     {
         return $this->inscricao_estadual;
     }
 
-    public function telefone()
+
+    public function getTelefone()
     {
         return $this->telefone;
     }
 
-    public function celular()
+
+    public function getCelular()
     {
         return $this->celular;
     }
 
-    public function cep()
+
+    public function getCep()
     {
         return $this->cep;
     }
 
-    public function logradouro()
+
+    public function getLogradouro()
     {
         return $this->logradouro;
     }
 
-    public function numero()
+
+    public function getNumero()
     {
         return $this->numero;
     }
 
-    public function complemento()
+
+    public function getComplemento()
     {
         return $this->complemento;
     }
 
-    public function observacao()
-    {
-        return $this->observacao;
-    }
 
-    public function bairro()
+    public function getBairro()
     {
         return $this->bairro;
     }
 
-    public function municipio()
+
+    public function getMunicipio()
     {
         return $this->municipio;
     }
 
-    public function uf()
+
+    public function getUf()
     {
         return $this->uf;
     }
 
-    public function ibge()
+
+    public function getIbge()
     {
         return $this->ibge;
     }
 
-    public function site()
+
+    public function getSite()
     {
         return $this->site;
     }
 
-    public function social()
+
+    public function getSocial()
     {
         return $this->social;
     }

@@ -1,5 +1,12 @@
 <?php
 
+/*
+|----------------------------------------------------------------------------
+| Media Language Lines
+|----------------------------------------------------------------------------
+| The following language lines are used by Class App\Domains\Medias\Media
+*/
+
 return array_merge(
 
     Lang::get('abstracts_entities::entity_female'),

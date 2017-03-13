@@ -2,6 +2,7 @@
 
 namespace App\Domains\Medias;
 
+use App\Domains\Medias\Presenters\CategoryViewPresenter;
 use App\Domains\Medias\Rules\CategoryRules;
 use App\Support\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -11,8 +12,6 @@ class Category extends Model
 {
     use LogsActivity;
     use SoftDeletes;
-
-    protected $rulesFrom             = CategoryRules::class;
 
     protected $columnTitle           = 'title';
     protected $entityDomainAlias     = 'medias';
@@ -24,10 +23,18 @@ class Category extends Model
     protected $entityRoutePrefix     = 'media-categories';
     protected $table                 = 'media_categories';
     protected $mediaCategorySlug     = 'media_categories';
+    protected $rulesFrom             = CategoryRules::class;
+    protected $presenter             = CategoryViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',
         'documents',
+    ];
+
+    protected $dates = [
+        'deleted_at',
+        'created_at',
+        'updated_at',
     ];
 
     protected $fillable = [

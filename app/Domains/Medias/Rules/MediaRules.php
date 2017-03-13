@@ -5,6 +5,10 @@ namespace App\Domains\Medias\Rules;
 use App\Domains\Medias\Media;
 use App\Support\Rules\Rules;
 
+/**
+ * Class MediaRules
+ * @package  App\Domains\Medias
+ */
 class MediaRules extends Rules
 {
     protected $entity = Media::class;

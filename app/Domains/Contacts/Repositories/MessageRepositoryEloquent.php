@@ -3,9 +3,13 @@
 namespace App\Domains\Contacts\Repositories;
 
 use App\Domains\Contacts\Message;
-use App\Domains\Contacts\Presenters\MessageFractalPresenter;
 use App\Support\Repositories\RepositoryEloquent;
+use App\Domains\Contacts\Presenters\MessageFractalPresenter;
 
+/**
+ * Class MessageRepositoryEloquent
+ * @package  App\Domains\Contacts
+ */
 class MessageRepositoryEloquent extends RepositoryEloquent implements MessageRepository
 {
     protected $fieldSearchable = [
@@ -23,11 +27,21 @@ class MessageRepositoryEloquent extends RepositoryEloquent implements MessageRep
         'updated_at'    => 'like',
     ];
 
+    /**
+     * Specify Model class name
+     *
+     * @return  string
+     */
     public function model()
     {
         return Message::class;
     }
 
+    /**
+     * Specify Fractal Presenter class name
+     *
+     * @return  string
+     */
     public function presenter()
     {
         return MessageFractalPresenter::class;

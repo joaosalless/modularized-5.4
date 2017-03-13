@@ -13,32 +13,36 @@ class {{ $entity['reflectionClass']->getShortName() }}ViewPresenter extends View
 {
 @if($entity['columns'])
 @foreach($entity['columns'] as $key => $col)
-@if($col['type'] == 'datetime')
+@if($col['type'] == 'datetime' || $col['type'] == 'date' || $col['type'] == 'time')
 @if(!in_array($col['name'], config('code_generator.excludes.fields.presenter_eloquent', [])))
     public function {{ lcfirst(studly_case('get_'.$key)) }}()
     {
-        return $this->{{ $key }}->format('d/m/Y H:i:s');
+        return $this->{{ $key }} ? $this->{{ $key }}->format('d/m/Y H:i:s') : null;
     }
-
 
     public function {{ lcfirst(studly_case('get_'.$key)) }}Date()
     {
-        return $this->{{ $key }}->format('d/m/Y');
+        return $this->{{ $key }} ? $this->{{ $key }}->format('d/m/Y') : null;
     }
-
 
     public function {{ lcfirst(studly_case('get_'.$key)) }}Time()
     {
-        return $this->{{ $key }}->format('H:i:s');
+        return $this->{{ $key }} ? $this->{{ $key }}->format('H:i:s') : null;
     }
-
 
     public function {{ lcfirst(studly_case('get_'.$key)) }}ForHumans()
     {
-        return $this->{{ $key }}->diffForHumans();
+        return $this->{{ $key }} ? $this->{{ $key }}->diffForHumans() : null;
     }
-    @endif
+@endif
+@elseif($col['type'] == 'boolean')
+
+    public function {{ lcfirst(studly_case('get_'.$key)) }}()
+    {
+        return $this->{{ $key }} ? $this->entity->getLabel('boolean_yes') : $this->entity->getLabel('boolean_no');
+    }
 @else
+
     public function {{ lcfirst(studly_case('get_'.$key)) }}()
     {
         return $this->{{ $key }};

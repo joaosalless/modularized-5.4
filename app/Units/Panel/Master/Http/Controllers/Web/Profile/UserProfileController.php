@@ -41,11 +41,15 @@ class UserProfileController extends Controller
     public function formatData(array $data) : array
     {
         if ($this->getCurrentUser()->isCompany()) {
-            $data['profile']['data_fundacao'] = Carbon::createFromFormat('d/m/Y', $data['profile']['data_fundacao']);
+            $data['profile']['data_fundacao'] = $data['profile']['data_fundacao']
+                ? Carbon::createFromFormat('d/m/Y', $data['profile']['data_fundacao'])
+                : null;
         }
 
         if ($this->getCurrentUser()->isPerson()) {
-            $data['profile']['data_nascimento'] = Carbon::createFromFormat('d/m/Y', $data['profile']['data_nascimento']);
+            $data['profile']['data_nascimento'] = $data['profile']['data_nascimento']
+                ? Carbon::createFromFormat('d/m/Y', $data['profile']['data_nascimento'])
+                : null;
         }
 
         return $data;

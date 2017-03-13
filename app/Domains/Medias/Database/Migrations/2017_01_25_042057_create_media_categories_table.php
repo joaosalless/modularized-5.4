@@ -20,7 +20,6 @@ class CreateMediaCategoriesTable extends Migration
             $table->string('slug')->nullable()->unique();
             $table->text('intro')->nullable();
             $table->text('body')->nullable();
-            $table->text('seo')->nullable();
             $table->boolean('active')->default(1);
             $table->softDeletes();
             $table->timestamps();

@@ -5,6 +5,10 @@ namespace App\Domains\Medias\Rules;
 use App\Domains\Medias\Category;
 use App\Domains\Abstracts\Categories\Rules\CategoryRules as AbstractCategoryRules;
 
+/**
+ * Class CategoryRules
+ * @package  App\Domains\Medias
+ */
 class CategoryRules extends AbstractCategoryRules
 {
     protected $entity = Category::class;
@@ -12,7 +16,8 @@ class CategoryRules extends AbstractCategoryRules
     public function defaultRules()
     {
         return [
-
+            'title' => 'required',
+            'slug'  => 'required',
         ];
     }
 

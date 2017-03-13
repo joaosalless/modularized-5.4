@@ -16,8 +16,7 @@
 
         <div class="panel-heading">
             <i class="{{ $entity->getEntityIcon() }}"></i>
-            {{ Str::upper($entity->getLabel('new')) }}
-            {{ Str::upper($entity->getEntityName()) }}
+            {{ Str::upper($entity->getLabel('new')) }} {{ Str::upper($entity->getEntityName()) }}
         </div>
 
         <div class="panel-body">

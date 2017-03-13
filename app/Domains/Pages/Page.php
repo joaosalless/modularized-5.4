@@ -2,6 +2,7 @@
 
 namespace App\Domains\Pages;
 
+use App\Domains\Pages\Presenters\PageViewPresenter;
 use App\Domains\Pages\Rules\PageRules;
 use App\Support\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -21,37 +22,31 @@ class Page extends Model
     protected $table                 = 'pages';
     protected $mediaCategorySlug     = 'pages';
     protected $rulesFrom             = PageRules::class;
+    protected $presenter             = PageViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',
-        'videos',
-        'audios',
         'documents',
     ];
 
     protected $dates = [
         'deleted_at',
+        'created_at',
+        'updated_at',
     ];
 
     protected $fillable = [
         'category_id',
-        'unit_id',
         'title',
         'template',
         'slug',
         'intro',
         'body',
-        'seo',
         'active',
     ];
 
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
-    }
-
-    public function unit()
-    {
-        return $this->belongsTo(Unit::class, 'unit_id', 'id');
     }
 }

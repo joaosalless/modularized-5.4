@@ -2,6 +2,7 @@
 
 namespace App\Domains\Persons;
 
+use App\Domains\Persons\Presenters\PersonViewPresenter;
 use App\Support\Helpers\Utils\Mask;
 use App\Support\Helpers\Utils\Utils;
 use App\Support\Database\Eloquent\Model;
@@ -22,28 +23,48 @@ class Person extends Model
     protected $entityViewsAlias     = 'persons';
     protected $entityRoutePrefix    = 'persons';
     protected $rulesFrom            = PersonRules::class;
+    protected $presenter            = PersonViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',
-        'videos',
-        'audios',
         'documents',
     ];
 
-    protected $fillable = [
-
-    ];
-
     protected $dates = [
-        'data_fundacao',
+        'data_nascimento',
+        'deleted_at',
+        'created_at',
+        'updated_at',
     ];
 
-    public function setCnpjAttribute($value)
+    protected $fillable = [
+        'nome',
+        'apelido',
+        'cpf',
+        'user_id',
+        'user_type',
+        'data_nascimento',
+        'sexo',
+        'telefone',
+        'celular',
+        'cep',
+        'logradouro',
+        'numero',
+        'complemento',
+        'bairro',
+        'municipio',
+        'uf',
+        'ibge',
+        'site',
+        'social',
+    ];
+
+    public function setCpfAttribute($value)
     {
-        $this->attributes['cnpj'] = Utils::unmask($value);
+        $this->attributes['cpf'] = Utils::unmask($value);
     }
 
-    public function getCnpjAttribute($value)
+    public function getCpfAttribute($value)
     {
         return Utils::mask($value, Mask::DOCUMENTO);
     }

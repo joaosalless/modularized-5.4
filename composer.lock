@@ -2156,16 +2156,16 @@
         },
         {
             "name": "jenssegers/agent",
-            "version": "v2.5.0",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/agent.git",
-                "reference": "43164fafc50c6b913f04b2d66407997cc8774588"
+                "reference": "68bef4f773933d33f9b6c8d1f2ff002f97a65b0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/agent/zipball/43164fafc50c6b913f04b2d66407997cc8774588",
-                "reference": "43164fafc50c6b913f04b2d66407997cc8774588",
+                "url": "https://api.github.com/repos/jenssegers/agent/zipball/68bef4f773933d33f9b6c8d1f2ff002f97a65b0b",
+                "reference": "68bef4f773933d33f9b6c8d1f2ff002f97a65b0b",
                 "shasum": ""
             },
             "require": {
@@ -2175,7 +2175,7 @@
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8|^5.0",
+                "phpunit/phpunit": "^4.0|^5.0|^6.0",
                 "satooshi/php-coveralls": "^1.0"
             },
             "type": "library",
@@ -2211,7 +2211,7 @@
                 "user agent",
                 "useragent"
             ],
-            "time": "2017-02-21T09:38:54+00:00"
+            "time": "2017-03-12T09:58:22+00:00"
         },
         {
             "name": "julien-c/iso3166",
@@ -2351,7 +2351,7 @@
                 "progress",
                 "upload"
             ],
-            "time": "2017-03-09 17:11:07"
+            "time": "2017-03-09T17:11:07+00:00"
         },
         {
             "name": "kennedytedesco/validation",

@@ -34,6 +34,7 @@ trait ModelDevUtilsTrait
             $entity['fillable']            = $this->getDevBuildFillable($entity['columns']);
             $entity['dates']               = $this->getDevBuildDates($entity['columns']);
             $entity['rules']               = $this->getDevBuildRules($entity['columns']);
+            $entity['factoryFields']       = $this->getDevBuildFactoryFields($entity['columns']);
             $entity['searchable']          = $this->getDevBuildSearchable($entity['columns']);
             $entity['translatableFields']  = $this->getDevBuildTranslatableFields($entity['columns']);
             $entity['transformableFields'] = $this->getDevBuildTransformableFields($entity['columns']);
@@ -58,6 +59,22 @@ trait ModelDevUtilsTrait
         }
 
         return $fillable;
+    }
+
+    /**
+     * @param array $columns
+     *
+     * @return array
+     */
+    public function getDevBuildFactoryFields(array $columns) : array
+    {
+        $factories = [];
+        foreach ($columns as $k => $col) {
+            if (!in_array($col['name'], config('code_generator.excludes.fields.factory', []))) {
+                $factories[$col['name']] = null;
+            }
+        }
+        return $factories;
     }
 
     /**

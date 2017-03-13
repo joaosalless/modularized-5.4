@@ -10,7 +10,9 @@
 
     @if($entity['columns'])
     @foreach($entity['columns'] as $key => $col)
-    {{{ '<tr>' }}}
+    @if($col['type'] == 'datetime' || $col['type'] == 'date' || $col['type'] == 'time')
+{{ '@' }}if($entity->{!! $col['name'] !!})
+            {{{ '<tr>' }}}
                 {{{ '<th>' }}}
                     @{{ $entity->getLabel('{!!$col["name"]!!}') }}
                 {{{ '<th>' }}}
@@ -18,6 +20,26 @@
                     @{{ {{{ '$entity' }}}->present()->{!! lcfirst(studly_case('get_'.$col['name'])) !!} }}
                 {{{ '<td>' }}}
             {{{ '</tr>' }}}
+            {{ '@' }}endif
+        @elseif($col['type'] == 'text')
+{{{ '<tr>' }}}
+                {{{ '<th>' }}}
+                    @{{ $entity->getLabel('{!!$col["name"]!!}') }}
+                {{{ '<th>' }}}
+                {{{ '<td>' }}}
+                    @{!!  $entity->present()->{{ lcfirst(studly_case('get_'.$col['name'])) }} !!}
+                {{{ '<td>' }}}
+                {{{ '</tr>' }}}
+        @else
+{{{ '<tr>' }}}
+                {{{ '<th>' }}}
+                    @{{ $entity->getLabel('{!!$col["name"]!!}') }}
+                {{{ '<th>' }}}
+                {{{ '<td>' }}}
+                    @{{ {{{ '$entity' }}}->present()->{!! lcfirst(studly_case('get_'.$col['name'])) !!} }}
+                {{{ '<td>' }}}
+            {{{ '</tr>' }}}
+            @endif
 
         @endforeach
 @endif{{{ '</tbody>' }}}

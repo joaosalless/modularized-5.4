@@ -15,9 +15,9 @@ class CreateCompanyTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('razao_social');
+            $table->string('razao_social')->nullable();
             $table->string('nome_fantasia');
-            $table->string('cnpj')->index();
+            $table->string('cnpj')->nullable()->index();
             $table->uuid('user_id')->nullable()->index();
             $table->string('user_type')->nullable()->index();
             $table->date('data_fundacao')->nullable()->index();
@@ -28,7 +28,6 @@ class CreateCompanyTable extends Migration
             $table->string('logradouro')->nullable();
             $table->string('numero')->nullable();
             $table->string('complemento')->nullable();
-            $table->string('observacao')->nullable();
             $table->string('bairro')->nullable();
             $table->string('municipio')->nullable();
             $table->string('uf')->nullable();

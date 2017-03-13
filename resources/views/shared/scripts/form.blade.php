@@ -42,13 +42,6 @@
 
         var clipboard = new Clipboard('.btnToClipboard');
 
-        $('.bs-toggle')
-            .bootstrapToggle()
-            .change(function() {
-                $(this).val($(this).prop('checked') ? 1 : 0);
-            }
-        );
-
     })
 
 </script>

@@ -28,7 +28,10 @@
 
 
     <div class="col-md-6">
-        {{ Form::bsToggle('active', $entity->getLabel('active'), 1, null, ['data-on' => 'Sim', 'data-off' => 'Não',]) }}
+        {{ Form::bsToggle('active', $entity->getLabel('active'), ['on' => 1, 'off' => 0], null, [
+            'data-on'  => 'Sim',
+            'data-off' => 'Não',
+        ]) }}
     </div>
 
 </div>

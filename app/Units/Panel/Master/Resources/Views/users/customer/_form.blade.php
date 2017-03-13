@@ -1,8 +1,10 @@
 <div class="row">
 
+    @if($entity->id)
     <div class="col-md-6">
         {{ Form::bsStatic('id', $entity->getLabel('id'), $entity->id, []) }}
     </div>
+    @endif
 
     <div class="col-md-6">
         {{ Form::bsEmail('email', $entity->getLabel('email'), null, []) }}

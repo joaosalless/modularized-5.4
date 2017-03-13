@@ -5,120 +5,110 @@
     <table class="{{ $panel->unitConfig()['theme']['table']['class'] }} {{ $entity->deleted_at ? 'bg-danger' : '' }}">
         <tbody>
 
-
         <tr>
             <th>
-            {{ trans('pages::page.id') }}
+            {{ $entity->getLabel('id') }}
             <th>
             <td>
-            {{ $entity->id }}
+            {{ $entity->present()->getId }}
             <td>
         </tr>
 
-
         <tr>
             <th>
-            {{ trans('pages::page.title') }}
+            {{ $entity->getLabel('category') }}
             <th>
             <td>
-            {{ $entity->title }}
+            {{ $entity->category->present()->getTitle }}
             <td>
         </tr>
 
-
         <tr>
             <th>
-            {{ trans('pages::page.category') }}
+            {{ $entity->getLabel('title') }}
             <th>
             <td>
-            {{ $entity->category->getTitle() }}
+            {{ $entity->present()->getTitle }}
             <td>
         </tr>
 
-
         <tr>
             <th>
-            {{ trans('pages::page.template') }}
+            {{ $entity->getLabel('template') }}
             <th>
             <td>
-            {{ $entity->template }}
+            {{ $entity->present()->getTemplate }}
             <td>
         </tr>
 
-
         <tr>
             <th>
-            {{ trans('pages::page.slug') }}
+            {{ $entity->getLabel('slug') }}
             <th>
             <td>
-            {{ $entity->slug }}
+            {{ $entity->present()->getSlug }}
             <td>
         </tr>
 
-
         <tr>
             <th>
-            {{ trans('pages::page.intro') }}
+            {{ $entity->getLabel('intro') }}
             <th>
             <td>
-            {!! $entity->intro !!}
+            {!!  $entity->present()->getIntro !!}
             <td>
         </tr>
 
-
         <tr>
             <th>
-            {{ trans('pages::page.body') }}
+            {{ $entity->getLabel('body') }}
             <th>
             <td>
-            {!! $entity->body !!}
+            {!!  $entity->present()->getBody !!}
             <td>
         </tr>
 
-
         <tr>
             <th>
-            {{ trans('pages::page.active') }}
+            {{ $entity->getLabel('active') }}
             <th>
             <td>
-            {{ $entity->active ? 'Sim' : 'Não' }}
+            {{ $entity->present()->getActive }}
             <td>
         </tr>
-
 
         @if($entity->deleted_at)
             <tr>
                 <th>
-                {{ trans('pages::page.deleted_at') }}
+                {{ $entity->getLabel('deleted_at') }}
                 <th>
                 <td>
-                    {{  $entity->deleted_at->format('d/m/Y H:i:s') }}
-                    ({{ $entity->deleted_at->diffForHumans() }})
+                {{ $entity->present()->getDeletedAt }}
                 <td>
             </tr>
         @endif
 
+        @if($entity->created_at)
+            <tr>
+                <th>
+                {{ $entity->getLabel('created_at') }}
+                <th>
+                <td>
+                {{ $entity->present()->getCreatedAt }}
+                <td>
+            </tr>
+        @endif
 
-        <tr>
-            <th>
-            {{ trans('pages::page.created_at') }}
-            <th>
-            <td>
-                {{  $entity->created_at->format('d/m/Y H:i:s') }}
-                ({{ $entity->created_at->diffForHumans() }})
-            <td>
-        </tr>
-
-
-        <tr>
-            <th>
-            {{ trans('pages::page.updated_at') }}
-            <th>
-            <td>
-                {{  $entity->updated_at->format('d/m/Y H:i:s') }}
-                ({{ $entity->updated_at->diffForHumans() }})
-            <td>
-        </tr>
+        @if($entity->updated_at)
+            <tr>
+                <th>
+                {{ $entity->getLabel('updated_at') }}
+                <th>
+                <td>
+                {{ $entity->present()->getUpdatedAt }}
+                <td>
+            </tr>
+        @endif
 
         </tbody>
 

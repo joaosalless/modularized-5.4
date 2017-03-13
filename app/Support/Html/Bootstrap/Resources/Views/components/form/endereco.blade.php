@@ -4,6 +4,11 @@
 
 
 <div class="col-md-6">
+    {{ Form::bsSelectUf($nameArray ? $nameArray.'[uf]' : 'uf', 'Estado', null, []) }}
+</div>
+
+
+<div class="col-md-12">
     {{ Form::bsText($nameArray ? $nameArray.'[logradouro]' : 'logradouro', 'Logradouro', null, []) }}
 </div>
 
@@ -25,9 +30,4 @@
 
 <div class="col-md-6">
     {{ Form::bsText($nameArray ? $nameArray.'[municipio]' : 'municipio', 'Município', null, []) }}
-</div>
-
-
-<div class="col-md-6">
-    {{ Form::bsSelectUf($nameArray ? $nameArray.'[uf]' : 'uf', 'Estado', null, []) }}
 </div>

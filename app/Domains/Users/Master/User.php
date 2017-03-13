@@ -2,14 +2,11 @@
 
 namespace App\Domains\Users\Master;
 
-use App\Domains\Persons\Person;
-use App\Domains\Companies\Company;
 use App\Domains\Users\Master\Presenters\UserViewPresenter;
 use App\Domains\Users\Master\Rules\UserRules;
 use App\Domains\Abstracts\Users\User as AbstractUser;
 use App\Domains\Users\Master\Database\Seeders\UserSeeder;
 use App\Domains\Users\Master\Notifications\Auth\ResetPasswordNotification;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class User extends AbstractUser
 {
@@ -30,9 +27,18 @@ class User extends AbstractUser
 
     protected $entityAllowedMedias   = [
         'images',
-        'videos',
-        'audios',
         'documents',
+    ];
+
+    protected $dates = [
+        'password_updated_at',
+        'email_verified_at',
+        'banned_at',
+        'last_login',
+        'last_activity',
+        'deleted_at',
+        'created_at',
+        'updated_at',
     ];
 
     protected $fillable = [
@@ -44,56 +50,20 @@ class User extends AbstractUser
         'profile_id',
         'profile_type',
         'role',
-        'status',
         'email_verified',
         'email_verified_at',
-        'activated',
-        'activated_at',
         'banned',
         'banned_at',
         'last_login',
         'last_activity',
+        'active',
     ];
 
-    protected $dates = [
-        'password_updated_at',
-        'email_verified_at',
-        'activated_at',
-        'banned_at',
-        'last_login',
-        'last_activity',
-    ];
-
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    protected $with = ['profile'];
-
-    protected $appends = ['name'];
-
-    public function getNameAttribute()
+    public function getAvailableRoles()
     {
-        if ($this->profile) {
-            return $this->isPerson() ? $this->profile->nome : $this->profile->nome_fantasia;
-        }
-        return null;
-    }
-
-    public function profile() : morphTo
-    {
-        return $this->morphTo();
-    }
-
-    public function isCompany() : bool
-    {
-        return $this->profile_type ? $this->profile_type == Company::class : null;
-    }
-
-    public function isPerson() : bool
-    {
-        return $this->profile_type ? $this->profile_type == Person::class : null;
+        return [
+            '',
+        ];
     }
 
     public function sendPasswordResetNotification($token)
