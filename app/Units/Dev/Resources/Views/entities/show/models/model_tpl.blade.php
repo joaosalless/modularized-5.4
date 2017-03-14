@@ -17,15 +17,12 @@ class {{ $entity['reflectionClass']->getShortName() }} extends Model
     use SoftDeletes;
 
     protected $columnTitle           = '{{ $entity['entityTitleColumn'] }}';
-    protected $entityDomainAlias     = '{{ $entity['entityDomainAlias'] }}';
-    protected $entityTranslationKey  = '{{ $entity['entityTranslationKey'] }}';
     protected $entityGender          = '{{ $entity['entityGender'] }}';
     protected $entityIcon            = '{{ $entity['entityIcon'] }}';
     protected $entityRouteAlias      = '{{ $entity['entityRouteAlias'] }}';
     protected $entityViewsAlias      = '{{ $entity['entityViewsAlias'] }}';
     protected $entityRoutePrefix     = '{{ $entity['entityRoutePrefix'] }}';
     protected $table                 = '{{ $entity['table'] }}';
-    protected $mediaCategorySlug     = '{{ $entity['mediaCategorySlug'] }}';
     protected $rulesFrom             = {{ $entity['reflectionClass']->getShortName() }}Rules::class;
     protected $presenter             = {{ $entity['reflectionClass']->getShortName() }}ViewPresenter::class;
 
