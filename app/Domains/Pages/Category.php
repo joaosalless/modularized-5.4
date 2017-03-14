@@ -11,18 +11,15 @@ class Category extends Model
 {
     use SoftDeletes;
 
-    protected $columnTitle           = 'title';
-    protected $entityDomainAlias     = 'pages';
-    protected $entityTranslationKey  = 'category';
-    protected $entityGender          = 'F';
-    protected $entityIcon            = 'fa fa-fw fa-file-text';
-    protected $entityRouteAlias      = 'pages_categories';
-    protected $entityViewsAlias      = 'pages-categories';
-    protected $entityRoutePrefix     = 'pages-categories';
-    protected $table                 = 'pages_categories';
-    protected $mediaCategorySlug     = 'pages_categories';
-    protected $rulesFrom             = CategoryRules::class;
-    protected $presenter             = CategoryViewPresenter::class;
+    protected $columnTitle       = 'title';
+    protected $entityGender      = 'F';
+    protected $entityIcon        = 'fa fa-fw fa-file-text';
+    protected $entityRouteAlias  = 'pages_categories';
+    protected $entityViewsAlias  = 'pages-categories';
+    protected $entityRoutePrefix = 'pages-categories';
+    protected $table             = 'pages_categories';
+    protected $rulesFrom         = CategoryRules::class;
+    protected $presenter         = CategoryViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',

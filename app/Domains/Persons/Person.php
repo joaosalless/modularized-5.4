@@ -13,17 +13,15 @@ class Person extends Model
 {
     use SoftDeletes;
 
-    protected $entityDomainAlias    = 'persons';
-    protected $entityTranslationKey = 'person';
-    protected $entityGender         = 'M';
-    protected $entityIcon           = 'fa fa-fw fa-bank';
-    protected $table                = 'persons';
-    protected $mediaCategorySlug    = 'persons';
-    protected $entityRouteAlias     = 'persons';
-    protected $entityViewsAlias     = 'persons';
-    protected $entityRoutePrefix    = 'persons';
-    protected $rulesFrom            = PersonRules::class;
-    protected $presenter            = PersonViewPresenter::class;
+    protected $columnTitle       = '';
+    protected $entityGender      = 'M';
+    protected $entityIcon        = 'fa fa-fw fa-bank';
+    protected $entityRouteAlias  = 'persons';
+    protected $entityViewsAlias  = 'persons';
+    protected $entityRoutePrefix = 'persons';
+    protected $table             = 'persons';
+    protected $rulesFrom         = PersonRules::class;
+    protected $presenter         = PersonViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',

@@ -29,15 +29,12 @@ class Media extends MediaModel implements Transformable, HasMedia, ModelContract
     use TransformableTrait;
 
     protected $columnTitle           = 'title';
-    protected $entityDomainAlias     = 'medias';
-    protected $entityTranslationKey  = 'media';
     protected $entityGender          = 'F';
     protected $entityIcon            = 'fa fa-fw fa-image';
     protected $entityRouteAlias      = 'medias';
     protected $entityViewsAlias      = 'medias';
     protected $entityRoutePrefix     = 'medias';
     protected $table                 = 'media';
-    protected $mediaCategorySlug     = 'medias';
     protected $rulesFrom             = MediaRules::class;
     protected $presenter             = MediaViewPresenter::class;
 

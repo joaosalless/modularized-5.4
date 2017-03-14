@@ -10,20 +10,17 @@ use App\Domains\Users\Master\Notifications\Auth\ResetPasswordNotification;
 
 class User extends AbstractUser
 {
-    protected $columnTitle          = 'name';
-    protected $entityDomainAlias    = 'master_users';
-    protected $entityTranslationKey = 'user';
-    protected $entityGender         = 'M';
-    protected $entityIcon           = 'fa fa-fw fa-user';
-    protected $authProvider         = 'master';
-    protected $entityRouteAlias     = 'users_master';
-    protected $entityViewsAlias     = 'users.master';
-    protected $entityRoutePrefix    = 'usuarios-master';
-    protected $table                = 'master_users';
-    protected $mediaCategorySlug    = 'master_users';
-    protected $rulesFrom            = UserRules::class;
-    protected $seederFrom           = UserSeeder::class;
-    protected $presenter            = UserViewPresenter::class;
+    protected $columnTitle       = 'name';
+    protected $entityGender      = 'M';
+    protected $entityIcon        = 'fa fa-fw fa-user';
+    protected $authProvider      = 'master';
+    protected $entityRouteAlias  = 'users_master';
+    protected $entityViewsAlias  = 'users.master';
+    protected $entityRoutePrefix = 'usuarios-master';
+    protected $table             = 'master_users';
+    protected $rulesFrom         = UserRules::class;
+    protected $seederFrom        = UserSeeder::class;
+    protected $presenter         = UserViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',
@@ -59,10 +56,10 @@ class User extends AbstractUser
         'active',
     ];
 
-    public function getAvailableRoles()
+    public function getAvailableRoles() : array
     {
         return [
-            '',
+
         ];
     }
 

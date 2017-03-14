@@ -13,12 +13,10 @@ class Company extends Model
 {
     use SoftDeletes;
 
-    protected $entityDomainAlias    = 'companies';
-    protected $entityTranslationKey = 'company';
+    protected $columnTitle          = 'nome_fantasia';
     protected $entityGender         = 'M';
     protected $entityIcon           = 'fa fa-fw fa-bank';
     protected $table                = 'companies';
-    protected $mediaCategorySlug    = 'companies';
     protected $entityRouteAlias     = 'companies';
     protected $entityViewsAlias     = 'companies';
     protected $entityRoutePrefix    = 'companies';

@@ -11,18 +11,15 @@ class Page extends Model
 {
     use SoftDeletes;
 
-    protected $columnTitle           = 'title';
-    protected $entityDomainAlias     = 'pages';
-    protected $entityTranslationKey  = 'page';
-    protected $entityGender          = 'F';
-    protected $entityIcon            = 'fa fa-fw fa-file-text';
-    protected $entityRouteAlias      = 'pages';
-    protected $entityViewsAlias      = 'pages';
-    protected $entityRoutePrefix     = 'pages';
-    protected $table                 = 'pages';
-    protected $mediaCategorySlug     = 'pages';
-    protected $rulesFrom             = PageRules::class;
-    protected $presenter             = PageViewPresenter::class;
+    protected $columnTitle       = 'title';
+    protected $entityGender      = 'F';
+    protected $entityIcon        = 'fa fa-fw fa-file-text';
+    protected $entityRouteAlias  = 'pages';
+    protected $entityViewsAlias  = 'pages';
+    protected $entityRoutePrefix = 'pages';
+    protected $table             = 'pages';
+    protected $rulesFrom         = PageRules::class;
+    protected $presenter         = PageViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',

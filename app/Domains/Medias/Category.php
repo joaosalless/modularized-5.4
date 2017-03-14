@@ -13,18 +13,15 @@ class Category extends Model
     use LogsActivity;
     use SoftDeletes;
 
-    protected $columnTitle           = 'title';
-    protected $entityDomainAlias     = 'medias';
-    protected $entityTranslationKey  = 'category';
-    protected $entityGender          = 'F';
-    protected $entityIcon            = 'fa fa-fw fa-image';
-    protected $entityRouteAlias      = 'medias_categories';
-    protected $entityViewsAlias      = 'medias-categories';
-    protected $entityRoutePrefix     = 'media-categories';
-    protected $table                 = 'media_categories';
-    protected $mediaCategorySlug     = 'media_categories';
-    protected $rulesFrom             = CategoryRules::class;
-    protected $presenter             = CategoryViewPresenter::class;
+    protected $columnTitle       = 'title';
+    protected $entityGender      = 'F';
+    protected $entityIcon        = 'fa fa-fw fa-image';
+    protected $entityRouteAlias  = 'medias_categories';
+    protected $entityViewsAlias  = 'medias-categories';
+    protected $entityRoutePrefix = 'media-categories';
+    protected $table             = 'media_categories';
+    protected $rulesFrom         = CategoryRules::class;
+    protected $presenter         = CategoryViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',

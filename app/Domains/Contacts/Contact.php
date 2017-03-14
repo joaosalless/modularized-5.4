@@ -11,18 +11,15 @@ class Contact extends Model
 {
     use SoftDeletes;
 
-    protected $columnTitle           = 'name';
-    protected $entityDomainAlias     = 'contacts';
-    protected $entityTranslationKey  = 'contact';
-    protected $entityGender          = 'M';
-    protected $entityIcon            = 'fa fa-fw fa-address-book';
-    protected $entityRouteAlias      = 'contacts';
-    protected $entityViewsAlias      = 'contacts';
-    protected $entityRoutePrefix     = 'contacts';
-    protected $table                 = 'contact_form';
-    protected $mediaCategorySlug     = 'contact_form';
-    protected $rulesFrom             = ContactRules::class;
-    protected $presenter             = ContactViewPresenter::class;
+    protected $columnTitle       = 'name';
+    protected $entityGender      = 'M';
+    protected $entityIcon        = 'fa fa-fw fa-address-book';
+    protected $entityRouteAlias  = 'contacts';
+    protected $entityViewsAlias  = 'contacts';
+    protected $entityRoutePrefix = 'contacts';
+    protected $table             = 'contact_form';
+    protected $rulesFrom         = ContactRules::class;
+    protected $presenter         = ContactViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',

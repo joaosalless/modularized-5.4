@@ -11,15 +11,12 @@ abstract class Category extends Model
     use SoftDeletes;
 
     protected $columnTitle           = 'title';
-    protected $entityDomainAlias     = 'abstracts_categories';
-    protected $entityTranslationKey  = 'category';
     protected $entityGender          = 'F';
     protected $entityIcon            = 'fa fa-fw fa-file-text';
     protected $entityRouteAlias      = 'abstract_category';
     protected $entityViewsAlias      = 'abstract-category';
     protected $entityRoutePrefix     = 'abstract-category';
     protected $table                 = 'abstract_category';
-    protected $mediaCategorySlug     = 'abstract_category';
     protected $rulesFrom             = CategoryRules::class;
 
     protected $entityAllowedMedias   = [

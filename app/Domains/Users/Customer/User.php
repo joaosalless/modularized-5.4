@@ -2,31 +2,25 @@
 
 namespace App\Domains\Users\Customer;
 
-use App\Domains\Persons\Person;
-use App\Domains\Companies\Company;
 use App\Domains\Users\Customer\Presenters\UserViewPresenter;
 use App\Domains\Users\Customer\Rules\UserRules;
 use App\Domains\Abstracts\Users\User as AbstractUser;
 use App\Domains\Users\Customer\Database\Seeders\UserSeeder;
 use App\Domains\Users\Customer\Notifications\Auth\ResetPasswordNotification;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class User extends AbstractUser
 {
-    protected $columnTitle          = 'name';
-    protected $entityDomainAlias    = 'customer_users';
-    protected $entityTranslationKey = 'user';
-    protected $entityGender         = 'M';
-    protected $entityIcon           = 'fa fa-fw fa-user';
-    protected $authProvider         = 'customer';
-    protected $entityRouteAlias     = 'users_customer';
-    protected $entityViewsAlias     = 'users.customer';
-    protected $entityRoutePrefix    = 'customer-users';
-    protected $table                = 'customer_users';
-    protected $mediaCategorySlug    = 'customer_users';
-    protected $rulesFrom            = UserRules::class;
-    protected $seederFrom           = UserSeeder::class;
-    protected $presenter            = UserViewPresenter::class;
+    protected $columnTitle       = 'name';
+    protected $entityGender      = 'M';
+    protected $entityIcon        = 'fa fa-fw fa-user';
+    protected $authProvider      = 'customer';
+    protected $entityRouteAlias  = 'users_customer';
+    protected $entityViewsAlias  = 'users.customer';
+    protected $entityRoutePrefix = 'customer-users';
+    protected $table             = 'customer_users';
+    protected $rulesFrom         = UserRules::class;
+    protected $seederFrom        = UserSeeder::class;
+    protected $presenter         = UserViewPresenter::class;
 
     protected $entityAllowedMedias   = [
         'images',
@@ -63,9 +57,12 @@ class User extends AbstractUser
         'active',
     ];
 
-    protected $with = ['profile'];
+    public function getAvailableRoles() : array
+    {
+        return [
 
-    protected $appends = ['name'];
+        ];
+    }
 
     public function sendPasswordResetNotification($token)
     {

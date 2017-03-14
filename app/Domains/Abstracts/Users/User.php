@@ -49,12 +49,9 @@ abstract class User extends Authenticatable implements UserContract,
     ];
 
     protected $columnTitle;
-    protected $entityDomainAlias;
-    protected $entityTranslationKey;
     protected $entityGender;
     protected $entityRouteAlias;
     protected $entityRoutePrefix;
-    protected $authProvider;
     protected $authRoutePrefix;
     protected $authRouteAlias;
     protected $rulesFrom;

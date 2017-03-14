@@ -12,15 +12,12 @@ class Message extends Model
     use SoftDeletes;
 
     protected $columnTitle           = 'subject';
-    protected $entityDomainAlias     = 'contacts';
-    protected $entityTranslationKey  = 'message';
     protected $entityGender          = 'F';
     protected $entityIcon            = 'fa fa-fw fa-envelope';
     protected $entityRouteAlias      = 'contacts-messages';
     protected $entityViewsAlias      = 'contacts-messages';
     protected $entityRoutePrefix     = 'contacts-messages';
     protected $table                 = 'contact_form_message';
-    protected $mediaCategorySlug     = 'contact_form_message';
     protected $rulesFrom             = MessageRules::class;
     protected $presenter             = MessageViewPresenter::class;
 

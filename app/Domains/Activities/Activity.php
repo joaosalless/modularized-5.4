@@ -26,8 +26,6 @@ class Activity extends ActivityModel implements Transformable, HasMedia
     use TransformableTrait;
 
     protected $columnTitle           = 'description';
-    protected $entityDomainAlias     = 'activities';
-    protected $entityTranslationKey  = 'activity';
     protected $entityGender          = 'F';
     protected $entityIcon            = 'fa fa-fw fa-clock-o';
     protected $entityRouteAlias      = 'activities';
@@ -38,6 +36,8 @@ class Activity extends ActivityModel implements Transformable, HasMedia
     protected $entityAllowedMedias   = [];
 
     protected $dates = [
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 }
