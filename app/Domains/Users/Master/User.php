@@ -11,6 +11,7 @@ use App\Domains\Users\Master\Notifications\Auth\ResetPasswordNotification;
 class User extends AbstractUser
 {
     protected $columnTitle       = 'name';
+    protected $entityDomainAlias = 'master_users';
     protected $entityGender      = 'M';
     protected $entityIcon        = 'fa fa-fw fa-user';
     protected $authProvider      = 'master';
