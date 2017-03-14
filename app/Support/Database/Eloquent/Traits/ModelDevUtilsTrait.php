@@ -10,7 +10,7 @@ trait ModelDevUtilsTrait
     {
         $entity                          = [];
         $entity['className']             = static::class;
-        $entity['reflectionClass']       = (new \ReflectionClass($this));
+        $entity['reflectionClass']       = $this->getReflectionClass();
         $entity['table']                 = $this->getTable();
         $entity['entityTitle']           = $this->getTitle();
         $entity['entityTitleColumn']     = $this->getTitleColumn();
