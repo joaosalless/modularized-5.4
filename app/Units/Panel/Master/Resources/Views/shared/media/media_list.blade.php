@@ -29,7 +29,7 @@
                             <td>{{ $media->extension }}</td>
                             <td>{{ $media->humanReadableSize }}</td>
                             <td>{{ $media->created_at->format('d/m/Y') }}</td>
-                            @include("{$panel->unitAlias()}::shared.list.model_medias_td", ['model' => $media])
+                            @include("{$panel->unitAlias()}::shared.list.model_medias_td",  ['model' => $media])
                             @include("{$panel->unitAlias()}::shared.list.media_actions_td", ['model'  => $media])
                         </tr>
                     @endforeach

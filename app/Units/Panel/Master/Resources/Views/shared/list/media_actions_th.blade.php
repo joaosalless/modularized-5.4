@@ -3,4 +3,4 @@
     <th>{{ trans($entity->getEntityDomainAlias().'::'.$entity->getEntityTranslationKey().'.active') }}</th>
 @endif
 
-<th class="text-right" style="width: 150px;">{{ trans('media.actions') }}</th>
+<th class="text-right" style="width: 170px;">{{ trans('media.actions') }}</th>

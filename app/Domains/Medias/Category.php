@@ -39,7 +39,6 @@ class Category extends Model
         'slug',
         'intro',
         'body',
-        'seo',
         'active',
     ];
 

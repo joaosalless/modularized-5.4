@@ -29,7 +29,9 @@
         </div>
 
         <div class="panel-body" style="border-top: 1px solid #ddd">
-            @include("{$panel->unitAlias()}::shared.media.media_list")
+            <div class="row">
+                @include("{$panel->unitAlias()}::shared.media.show_medias.table")
+            </div>
         </div>
 
         <div class="panel-body" style="border-top: 1px solid #ddd">

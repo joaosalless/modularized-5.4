@@ -2,6 +2,7 @@
 
 namespace App\Domains\Medias;
 
+use App\Domains\Medias\Category as MediaCategory;
 use App\Domains\Medias\Repositories\CategoryRepository;
 use App\Support\Database\Eloquent\Contracts\ModelContract;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -90,7 +91,28 @@ class MediaHelper
         $this->model = $model;
         $this->request = app('request');
         $this->mediaCategoryRepository = app(CategoryRepository::class);
-        $this->mediaCategory = $this->mediaCategoryRepository->findBySlug($model->getMediaCategorySlug());
+        $this->mediaCategory = $this->getMediaCategory($model);
+    }
+
+    /**
+     * Get first or create new Media Category from Model
+     *
+     * @param ModelContract $model
+     *
+     * @return Category
+     */
+    public function getMediaCategory(ModelContract $model) : MediaCategory
+    {
+        $mediaCategory = $this->mediaCategoryRepository->firstOrNew([
+            'slug' => $model->getMediaCategorySlug(),
+        ]);
+
+        if ( ! $mediaCategory->id ) {
+            $mediaCategory->title = $model->getEntityName();
+            $mediaCategory->save();
+        }
+
+        return $mediaCategory;
     }
 
     public function addMedia()

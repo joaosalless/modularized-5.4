@@ -61,7 +61,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
-                    @include("dev::nav.sidebar-left")
+                    @include("{$panel->unitAlias()}::nav.sidebar-left")
                 </div>
                 <div class="col-md-10">
                     @include('alert::messages')

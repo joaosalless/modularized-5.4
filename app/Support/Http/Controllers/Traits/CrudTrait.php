@@ -82,7 +82,7 @@ trait CrudTrait
                 'destroy'         => true,
                 'toggle_trash'    => true,
                 'toggle_active'   => true,
-                'toggle_is_cover' => false,
+                'toggle_is_cover' => true,
             ],
         ];
 

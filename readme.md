@@ -7,6 +7,11 @@ Clone this repository
 git clone https://github.com/joaosalless/modularized-5.4
 ```
 
+Go to the project directory
+```
+cd modularized-5.4
+```
+
 Install Php Composer dependencies
 
 ```

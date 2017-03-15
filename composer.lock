@@ -1521,16 +1521,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.3.2",
+            "version": "8.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "8c9222b6364af3d230112cd9a780551a01553c39"
+                "reference": "fa1629e56c81d0b72e39298a62aba241656f1834"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/8c9222b6364af3d230112cd9a780551a01553c39",
-                "reference": "8c9222b6364af3d230112cd9a780551a01553c39",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/fa1629e56c81d0b72e39298a62aba241656f1834",
+                "reference": "fa1629e56c81d0b72e39298a62aba241656f1834",
                 "shasum": ""
             },
             "require": {
@@ -1585,7 +1585,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2017-03-01T08:22:01+00:00"
+            "time": "2017-03-14T11:28:30+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -2306,12 +2306,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "06a2db023a290ce955421490b483fe6d1942973f"
+                "reference": "d1851631f37710c991de68e8b2db9e821808a82a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/06a2db023a290ce955421490b483fe6d1942973f",
-                "reference": "06a2db023a290ce955421490b483fe6d1942973f",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/d1851631f37710c991de68e8b2db9e821808a82a",
+                "reference": "d1851631f37710c991de68e8b2db9e821808a82a",
                 "shasum": ""
             },
             "type": "library",
@@ -2351,7 +2351,7 @@
                 "progress",
                 "upload"
             ],
-            "time": "2017-03-09T17:11:07+00:00"
+            "time": "2017-03-14T03:27:05+00:00"
         },
         {
             "name": "kennedytedesco/validation",
@@ -3849,16 +3849,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.9",
+            "version": "v2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "6968531206671f94377b01dc7888d5d1b858a01b"
+                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/6968531206671f94377b01dc7888d5d1b858a01b",
-                "reference": "6968531206671f94377b01dc7888d5d1b858a01b",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/634bae8e911eefa89c1abfbf1b66da679ac8f54d",
+                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d",
                 "shasum": ""
             },
             "require": {
@@ -3893,7 +3893,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-03-03T20:43:42+00:00"
+            "time": "2017-03-13T16:27:32+00:00"
         },
         {
             "name": "patchwork/utf8",
@@ -4384,16 +4384,16 @@
         },
         {
             "name": "prettus/l5-repository",
-            "version": "2.6.15",
+            "version": "2.6.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andersao/l5-repository.git",
-                "reference": "efca3fc20864c54a30ce95e6f0f090a0ec21e9f2"
+                "reference": "f509a51e9f3933dcd4d99ce11f4ac8688df5eba2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/efca3fc20864c54a30ce95e6f0f090a0ec21e9f2",
-                "reference": "efca3fc20864c54a30ce95e6f0f090a0ec21e9f2",
+                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/f509a51e9f3933dcd4d99ce11f4ac8688df5eba2",
+                "reference": "f509a51e9f3933dcd4d99ce11f4ac8688df5eba2",
                 "shasum": ""
             },
             "require": {
@@ -4440,7 +4440,7 @@
                 "model",
                 "repository"
             ],
-            "time": "2017-03-10T19:32:32+00:00"
+            "time": "2017-03-13T23:07:29+00:00"
         },
         {
             "name": "prettus/laravel-validation",
@@ -4793,16 +4793,16 @@
         },
         {
             "name": "respect/validation",
-            "version": "1.1.11",
+            "version": "1.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Respect/Validation.git",
-                "reference": "03f4abbd08149fb1b803a6a7d767dd3f925ce1d1"
+                "reference": "5ab87d1dd932872f6670136a513f72ff9ea41c67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Respect/Validation/zipball/03f4abbd08149fb1b803a6a7d767dd3f925ce1d1",
-                "reference": "03f4abbd08149fb1b803a6a7d767dd3f925ce1d1",
+                "url": "https://api.github.com/repos/Respect/Validation/zipball/5ab87d1dd932872f6670136a513f72ff9ea41c67",
+                "reference": "5ab87d1dd932872f6670136a513f72ff9ea41c67",
                 "shasum": ""
             },
             "require": {
@@ -4854,7 +4854,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2017-01-26T14:39:48+00:00"
+            "time": "2017-03-14T09:44:11+00:00"
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
@@ -5053,16 +5053,16 @@
         },
         {
             "name": "spatie/image",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image.git",
-                "reference": "6045902990805f85a00efd0d4cd2e80263e587f9"
+                "reference": "634530772b7d1c49fe140b7ef0307cb5ef5dbdb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image/zipball/6045902990805f85a00efd0d4cd2e80263e587f9",
-                "reference": "6045902990805f85a00efd0d4cd2e80263e587f9",
+                "url": "https://api.github.com/repos/spatie/image/zipball/634530772b7d1c49fe140b7ef0307cb5ef5dbdb3",
+                "reference": "634530772b7d1c49fe140b7ef0307cb5ef5dbdb3",
                 "shasum": ""
             },
             "require": {
@@ -5098,7 +5098,7 @@
                 "image",
                 "spatie"
             ],
-            "time": "2017-02-06T09:33:27+00:00"
+            "time": "2017-03-14T19:50:51+00:00"
         },
         {
             "name": "spatie/laravel-activitylog",
@@ -5166,16 +5166,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "4.6.6",
+            "version": "4.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "e67a7a9459e46fdab6a62fbc5aed36d7b393dfe3"
+                "reference": "5f231d431fb791d988ea4d36f6945a3be4e7fb4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/e67a7a9459e46fdab6a62fbc5aed36d7b393dfe3",
-                "reference": "e67a7a9459e46fdab6a62fbc5aed36d7b393dfe3",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/5f231d431fb791d988ea4d36f6945a3be4e7fb4d",
+                "reference": "5f231d431fb791d988ea4d36f6945a3be4e7fb4d",
                 "shasum": ""
             },
             "require": {
@@ -5228,7 +5228,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2017-02-22T14:34:37+00:00"
+            "time": "2017-03-14T19:35:02+00:00"
         },
         {
             "name": "spatie/laravel-glide",
