@@ -7,6 +7,12 @@ Clone this repository
 git clone https://github.com/joaosalless/modularized-5.4
 ```
 
+Install Php Composer dependencies
+
+```
+composer install
+```
+
 Copy the .env-example file to .env.
 
 ```
