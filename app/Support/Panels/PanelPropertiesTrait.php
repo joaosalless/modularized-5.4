@@ -4,6 +4,7 @@ namespace App\Support\Panels;
 
 use App\Domains\Abstracts\Users\User;
 use Exception;
+use Str;
 
 trait PanelPropertiesTrait
 {
@@ -182,6 +183,19 @@ trait PanelPropertiesTrait
     public function resetPasswordTokenUrl($token): string
     {
         return $this->authUrl('password.reset.token', $token);
+    }
+
+
+    public function getNamespace($provider = null): string
+    {
+        $provider = $provider ?: $this->unitAlias();
+        return $this->makePanelNamespace($provider);
+    }
+
+
+    public function makePanelNamespace($provider): string
+    {
+        return app()->getNamespace() . 'Units\\Panels\\' . Str::studly($provider);
     }
 
 }

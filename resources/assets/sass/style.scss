@@ -10,7 +10,7 @@ html {
   /* Set the fixed height of the footer here */
   height: 245px;
   //background-color: #f5f5f5;
-  > .container {
+  > .container, .container-fluid {
     padding: 30px 15px;
   }
 }
@@ -46,6 +46,13 @@ body {
   }
   > .container {
     padding: 60px 15px 0;
+  }
+
+  .container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 

@@ -27,7 +27,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-inverse navbar-static-top bg-primary">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -58,12 +58,12 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     @include("dev::nav.sidebar-left")
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-10">
                     @include('alert::messages')
                     @yield('content')
                 </div>

@@ -1,6 +1,5 @@
 <pre>
-<code class="php blade" id="show_table_tpl">
-{{{ '<div' }}} class="col-md-12">
+<code class="php blade" id="{{$provider}}_show_table_tpl">{{{ '<div' }}} class="col-md-12">
 
     {{'@'}}include("{$panel->unitAlias()}::shared.show_table.header")
 
@@ -47,5 +46,5 @@
     {{{ '</table>' }}}
 
 {{{ '</div>' }}}
-</code>{{ Html::bsClipboard('show_table_tpl') }}
+</code>{{ Html::bsClipboard("{$provider}_show_table_tpl") }}
 </pre>

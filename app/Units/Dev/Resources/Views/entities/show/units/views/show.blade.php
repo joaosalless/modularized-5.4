@@ -10,7 +10,7 @@
             <div class="panel-body no-padding">
                 <div class="row">
                     <div class="col-md-12">
-                        @include("dev::entities.show.views.form_tpl")
+                        @include("dev::entities.show.units.views.form_tpl")
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="panel-body no-padding">
                 <div class="row">
                     <div class="col-md-12">
-                        @include("dev::entities.show.views.show_table_tpl")
+                        @include("dev::entities.show.units.views.show_table_tpl")
                     </div>
                 </div>
             </div>

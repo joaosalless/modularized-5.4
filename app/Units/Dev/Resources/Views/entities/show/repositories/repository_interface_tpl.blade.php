@@ -3,11 +3,13 @@
 
 namespace {{ $entity['reflectionClass']->getNamespaceName() }}\Repositories;
 
+use App\Support\Repositories\RepositoryContract;
+
 /**
  * Interface {{ $entity['reflectionClass']->getShortName() }}Repository
  * @package {{ $entity['reflectionClass']->getNamespaceName() }}
  */
-interface {{ $entity['reflectionClass']->getShortName() }}Repository
+interface {{ $entity['reflectionClass']->getShortName() }}Repository extends RepositoryContract
 {
 
 }

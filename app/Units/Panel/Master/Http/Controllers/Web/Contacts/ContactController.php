@@ -8,41 +8,28 @@ use App\Units\Panel\Master\Http\Controllers\Web\Controller;
 class ContactController extends Controller
 {
     protected $repository;
-    protected $entity;
 
-
+    /**
+     * ContactController constructor.
+     *
+     * @param ContactRepository $repository
+     */
     public function __construct(ContactRepository $repository)
     {
-        parent::__construct();
-        $this->repository = $repository;
-        $this->entity = $repository->makeModel();
+        parent::__construct($repository);
     }
 
-
-    public function getEntity($id = null): array
-    {
-        $response = [
-            'entity'       => ($id !== null)
-                ? $this->repository->with($this->getEntityRelations())->find($id)
-                : $this->repository->makeModel(),
-            'actionRoutes' => $this->getActionButtons(),
-        ];
-
-        return $response;
-    }
-
-
+    /**
+     * Get Entity Relations
+     *
+     * Specify the entity relationships to be loaded
+     *
+     * @return array
+     */
     public function getEntityRelations(): array
     {
         return [
-            'messages',
+            'messages'
         ];
     }
-
-
-    public function formatData(array $data): array
-    {
-        return $data;
-    }
-
 }

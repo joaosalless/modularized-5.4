@@ -43,6 +43,16 @@ php artisan migrate:refresh --seed
 ### Use
 In your browser, go to `http://localhost:8000/dev` or `http://localhost/dev` if you are using docker-compose.
 
+Default credentials are defined in App\Domains\Users\Master\Seeders\UserSeeder
+
+```
+Email: master@user.com
+```
+
+```
+Password: 123456
+```
+
 All models will be listed in the side menu. Click on each model to inspect it.
 
 ### Screenshots
