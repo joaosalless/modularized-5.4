@@ -56,7 +56,18 @@ Password: 123456
 All models will be listed in the side menu. Click on each model to inspect it.
 
 ### Screenshots
+
+Model inspection
+
 ![](docs/screenshots/model.png)
+
+Routes inspection
+
+![](docs/screenshots/routes.png)
+
+Controllers inspection
+
+![](docs/screenshots/controllers.png)
 
 ## License
 
