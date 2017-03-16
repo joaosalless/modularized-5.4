@@ -4,6 +4,7 @@
 /storage/*.key
 /vendor
 /.idea
+/storage/app/geoip/
 /storage/framework/views/*
 /storage/debugbar/
 /storage/email-previews/
