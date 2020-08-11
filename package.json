@@ -32,7 +32,7 @@
     "simple-line-icons": "^2.4.1",
     "sortablejs": "^1.5.1",
     "tether": "^1.4.0",
-    "tinymce": "^4.5.4",
+    "tinymce": "^4.9.11",
     "vue-template-compiler": "^2.2.1"
   }
 }
