@@ -4035,9 +4035,9 @@ tiny-emitter@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-1.1.0.tgz#ab405a21ffed814a76c19739648093d70654fecb"
 
-tinymce@^4.5.4:
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-4.5.5.tgz#71d18582771a8cef8531b94ebb10984d0260074c"
+tinymce@^5.6.0:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-5.6.0.tgz#b5eda4888e1a607ddd545619cfaa137d59de14b4"
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"
